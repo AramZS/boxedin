@@ -1,0 +1,15 @@
+/*
+Theme Name:         Boxed In
+Theme URI:          http://aramzs.me/
+Description:        Prefixed theme built on the Reverie framework.
+Version:            0.0.1
+Author:             Aram Zucker-Scharff
+Author URI:         http://aramzs.me/
+
+License:            Creative Commons Attribution 3.0
+License URI:        http://creativecommons.org/licenses/by/3.0/
+*/
+
+	@import url('default.css');
+	
+	@import url('css/user.css');
