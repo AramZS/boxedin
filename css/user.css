@@ -1,2 +1,9 @@
-.row { }
+.topleft .twelve { 
+
+	padding-top:20px;
+	width: 80%;
+	padding-right: 10%;
+	padding-left: 10%;
+
+}
 

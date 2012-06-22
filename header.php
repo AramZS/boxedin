@@ -131,7 +131,7 @@
 					</div>
 				
 				</div>
-				<div class="six columns">
+				<div class="six columns topleft">
 				
 					<div class="row">
 						
@@ -159,7 +159,7 @@
 					</div>
 				
 				</div>
-				<div class="two columns">
+				<div class="two columns topright">
 				
 					<div class="row">
 						
@@ -187,7 +187,7 @@
 					</div>				
 				
 				</div>
-				<div class="two columns">
+				<div class="two columns topfarright">
 				
 					<div class="row">
 						
