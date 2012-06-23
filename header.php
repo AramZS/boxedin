@@ -105,7 +105,7 @@
 			
 				<div class="two columns topfarleft">
 				
-					<div class="row">
+					<div class="row topwidgetbox">
 						
 						<div class="twelve columns">
 							<?php
@@ -122,7 +122,7 @@
 						</div>
 						
 					</div>
-					<div class="row">
+					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Far Left"); ?>
@@ -133,7 +133,7 @@
 				</div>
 				<div class="six columns topleft">
 				
-					<div class="row">
+					<div class="row topwidgetbox">
 						
 						<div class="twelve columns">
 							<?php
@@ -150,7 +150,7 @@
 						</div>
 						
 					</div>
-					<div class="row">
+					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Far Left"); ?>
@@ -161,7 +161,7 @@
 				</div>
 				<div class="two columns topright">
 				
-					<div class="row">
+					<div class="row topwidgetbox">
 						
 						<div class="twelve columns">
 							<?php
@@ -178,7 +178,7 @@
 						</div>
 						
 					</div>
-					<div class="row">
+					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Far Left"); ?>
@@ -189,7 +189,7 @@
 				</div>
 				<div class="two columns topfarright">
 				
-					<div class="row">
+					<div class="row topwidgetbox">
 						
 						<div class="twelve columns">
 							<?php
@@ -206,7 +206,7 @@
 						</div>
 						
 					</div>
-					<div class="row">
+					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Far Left"); ?>
