@@ -107,7 +107,7 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns">
+						<div class="twelve columns topwidget">
 							<?php
 							
 								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4, 'posts_per_page' => 1 ) );
@@ -152,7 +152,7 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns">
+						<div class="twelve columns topwidget">
 							<?php
 							
 								$featureQueryTwo = new WP_Query( array( 'cat' => 4 ) );
@@ -180,7 +180,7 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns">
+						<div class="twelve columns topwidget">
 							<?php
 							
 								$featureQueryThree = new WP_Query( array('offset' => 2, 'cat' => 4 ) );
@@ -208,7 +208,7 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns">
+						<div class="twelve columns topwidget">
 							<?php
 							
 								$featureQueryFour = new WP_Query( array('offset' => 3, 'cat' => 4 ) );

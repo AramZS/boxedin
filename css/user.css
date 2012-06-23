@@ -23,6 +23,7 @@ background-image: -webkit-gradient(
 
 
 
+/** 
 .topleft .twelve { 
 
 	padding-top:20px;
@@ -62,4 +63,11 @@ background-image: -webkit-gradient(
 	margin-left: 2%;
 	margin-right: 2%;
 	
+}
+**/
+
+.toparea .topfarleft .topwidget {
+
+	
+
 }
