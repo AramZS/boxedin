@@ -110,11 +110,28 @@
 						<div class="twelve columns">
 							<?php
 							
-								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4 ) );
+								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4, 'posts_per_page' => 1 ) );
 								
 								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
 								
-									echo the_title();
+									?><div class="toptitle">
+										<h2><?php echo the_title(); ?></h2>
+									</div>
+									<div class="topthumb">
+										<?php 
+										if (has_post_thumbnail()){
+											
+											the_post_thumbnail();
+											
+										} ?>
+									</div>
+									<div class="topexcerpt">
+										<?php
+										//Add some filters here to change the excerpt as needed
+										the_excerpt();
+										?>
+									</div>
+								
 								
 								endwhile;
 							
