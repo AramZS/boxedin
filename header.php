@@ -101,7 +101,7 @@
 			
 			
 			
-			<div class="row toparea">
+			<div class="row toparea featbox">
 			
 				<div class="two columns topfarleft">
 				
@@ -114,16 +114,17 @@
 								
 								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
 								
-									?><div class="toptitle">
-										<h2><?php echo the_title(); ?></h2>
-									</div>
+									?>
 									<div class="topthumb">
 										<?php 
 										if (has_post_thumbnail()){
 											
-											the_post_thumbnail();
+											the_post_thumbnail('square-thumb');
 											
 										} ?>
+									</div>
+									<div class="toptitle">
+										<h4><?php echo the_title(); ?></h4>
 									</div>
 									<div class="topexcerpt">
 										<?php
@@ -158,8 +159,24 @@
 								$featureQueryTwo = new WP_Query( array('showposts' => 1, 'cat' => 4 ) );
 								
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
-								
-									echo the_title();
+									?>
+									<div class="topthumb">
+										<?php 
+										if (has_post_thumbnail()){
+											
+											the_post_thumbnail('horizontal-thumb');
+											
+										} ?>
+									</div>
+									<div class="toptitle">
+										<h2><?php echo the_title(); ?></h2>
+									</div>
+									<div class="topexcerpt">
+										<?php
+										//Add some filters here to change the excerpt as needed
+										the_excerpt();
+										?>
+									</div> <?php
 								
 								endwhile;
 							
@@ -170,7 +187,7 @@
 					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
-							<?php dynamic_sidebar("Home Header Far Left"); ?>
+							<?php dynamic_sidebar("Home Header Left"); ?>
 						</div>
 					
 					</div>
@@ -187,7 +204,24 @@
 								
 								while ( $featureQueryThree->have_posts() ) : $featureQueryThree->the_post();
 								
-									echo the_title();
+									?>
+									<div class="topthumb">
+										<?php 
+										if (has_post_thumbnail()){
+											
+											the_post_thumbnail('square-thumb');
+											
+										} ?>
+									</div>
+									<div class="toptitle">
+										<h4><?php echo the_title(); ?></h4>
+									</div>
+									<div class="topexcerpt">
+										<?php
+										//Add some filters here to change the excerpt as needed
+										the_excerpt();
+										?>
+									</div> <?php
 								
 								endwhile;
 							
@@ -198,7 +232,7 @@
 					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
-							<?php dynamic_sidebar("Home Header Far Left"); ?>
+							<?php dynamic_sidebar("Home Header Right"); ?>
 						</div>
 					
 					</div>				
@@ -215,7 +249,24 @@
 								
 								while ( $featureQueryFour->have_posts() ) : $featureQueryFour->the_post();
 								
-									echo the_title();
+									?>
+									<div class="topthumb">
+										<?php 
+										if (has_post_thumbnail()){
+											
+											the_post_thumbnail('square-thumb');
+											
+										} ?>
+									</div>
+									<div class="toptitle">
+										<h4><?php echo the_title(); ?></h4>
+									</div>
+									<div class="topexcerpt">
+										<?php
+										//Add some filters here to change the excerpt as needed
+										the_excerpt();
+										?>
+									</div> <?php
 								
 								endwhile;
 							
@@ -226,7 +277,7 @@
 					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
-							<?php dynamic_sidebar("Home Header Far Left"); ?>
+							<?php dynamic_sidebar("Home Header Far Right"); ?>
 						</div>
 					
 					</div>				

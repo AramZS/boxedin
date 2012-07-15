@@ -159,7 +159,7 @@ function responsive_theme_options_do_page() {
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
 
-            <h3 class="rwd-toggle"><a href="#"><?php _e('Slider Options', 'responsive'); ?></a></h3>
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Featured Home Item Options', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block">
                 <?php
@@ -173,22 +173,23 @@ function responsive_theme_options_do_page() {
 			$categories[$cat->cat_ID] = $cat->cat_name;
 		}
 		$default_cat = get_option('default_category');
-		$sliderCat = $options['sliderID'];
-		$homeCat = $options['homeID'];
-		$featCat = $options['featID'];
+		$featCatOne = $options['featCatOne'];
+		$featCatTwo = $options['featCatTwo'];
+		$featCatThree = $options['featCatThree'];
+		$featCatFour = $options['featCatFour'];
 		$sliderCatName = get_cat_name($sliderCat);
 		 $s = 0;
 		 $h = 0;
 		 $f = 0;
                 ?>
-                <div class="grid col-300"><?php _e('Category for Sliders', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Category for Home Page Box One', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         
-			<select name="responsive_theme_options[sliderID]" 
-				id="responsive_theme_options[sliderID]">
+			<select name="responsive_theme_options[featCatOne]" 
+				id="responsive_theme_options[featCatOne]">
 				<option value="">--</option>
 				    <?php foreach ($categories as $key=>$option) { 
-				      if ($key == $sliderCat) {
+				      if ($key == $featCatOne) {
 					$selected = "selected=\"selected\"";
 					$s = 1;
 				      } elseif (($key == $default_cat) && ($s != 1)) {
@@ -204,17 +205,17 @@ function responsive_theme_options_do_page() {
 				  <?php } ?>
 			</select> 
 			
-			<label class="description" for="responsive_theme_options[sliderID]"><?php _e('Select the category you want featured in various page sliders.', 'responsive'); ?></label>
+			<label class="description" for="responsive_theme_options[featCatOne]"><?php _e('Select home page box one category.', 'responsive'); ?></label>
 		     </div>
 						
-                <div class="grid col-300"><?php _e('Category for Home Page', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Category for Home Page Box Two (Featured)', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         
-			<select name="responsive_theme_options[homeID]" 
-				id="responsive_theme_options[homeID]">
+			<select name="responsive_theme_options[featCatTwo]" 
+				id="responsive_theme_options[featCatTwo]">
 				<option value="">--</option>
 				    <?php foreach ($categories as $key=>$option) { 
-				      if ($key == $homeCat) {
+				      if ($key == $featCatTwo) {
 					$selected = "selected=\"selected\"";
 					$h = 1;
 				      } elseif (($key == $default_cat) && ($h != 1)) {
@@ -230,17 +231,17 @@ function responsive_theme_options_do_page() {
 				  <?php } ?>
 			</select> 
 			
-			<label class="description" for="responsive_theme_options[homeID]"><?php _e('Select the category you want featured on the home page slider.', 'responsive'); ?></label>
+			<label class="description" for="responsive_theme_options[featCatTwo]"><?php _e('Select home page box two category.', 'responsive'); ?></label>
 		     </div>
                         
-                <div class="grid col-300"><?php _e('Category for Featured', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Category for Home Page Box Three', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
                         
-			<select name="responsive_theme_options[featID]" 
-				id="responsive_theme_options[featID]">
+			<select name="responsive_theme_options[featCatThree]" 
+				id="responsive_theme_options[featCatThree]">
 				<option value="">--</option>
 				    <?php foreach ($categories as $key=>$option) { 
-				      if ($key == $featCat) {
+				      if ($key == $featCatThree) {
 					$selected = "selected=\"selected\"";
 					$f = 1;
 				      } elseif (($key == $default_cat) && ($f != 1)) {
@@ -256,8 +257,34 @@ function responsive_theme_options_do_page() {
 				  <?php } ?>
 			</select> 
 			
-			<label class="description" for="responsive_theme_options[sliderID]"><?php _e('Select the category you want in the first featured slide on pages.', 'responsive'); ?></label>
+			<label class="description" for="responsive_theme_options[featCatThree]"><?php _e('Select home page box three category.', 'responsive'); ?></label>
 		     </div> 
+			 
+                <div class="grid col-300"><?php _e('Category for Home Page Box Four', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        
+			<select name="responsive_theme_options[featCatFour]" 
+				id="responsive_theme_options[featCatFour]">
+				<option value="">--</option>
+				    <?php foreach ($categories as $key=>$option) { 
+				      if ($key == $featCatFour) {
+					$selected = "selected=\"selected\"";
+					$f = 1;
+				      } elseif (($key == $default_cat) && ($f != 1)) {
+				      
+					$selected = "selected=\"selected\"";
+
+				      } else {
+					$selected = "";
+				      }
+				    ?>
+				<option value="<?php echo $key ?>" <?php echo $selected ?>>
+			<?php echo $option; ?></option>
+				  <?php } ?>
+			</select> 
+			
+			<label class="description" for="responsive_theme_options[featCatFour]"><?php _e('Select home page box four category.', 'responsive'); ?></label>
+		     </div> 			 
                        
 		       
 		       <p class="submit">

@@ -1,7 +1,7 @@
 .toparea {
 
 	margin-bottom: 3%;
-	background-color: #1F1F1F;
+/**	background-color: #1F1F1F;
 	
 background-image: linear-gradient(right , #1F1F1F 11%, #0A0A0A 61%, #1F1F1F 100% );
 background-image: -o-linear-gradient(right , #1F1F1F 11%, #0A0A0A 61%, #1F1F1F 100% );
@@ -17,57 +17,60 @@ background-image: -webkit-gradient(
 	color-stop(0.61, #0A0A0A),
 	color-stop(1.00, #1F1F1F),
 );
-
-
-}
-
-
-
-/** 
-.topleft .twelve { 
-
-	padding-top:20px;
-	width: 80%;
-	padding-right: 10%;
-	padding-left: 10%;
-
-}
-
-.topfarleft, .topleft, .topright, .topfarright {
-
-	border: 1px solid white;
-
-}
-
-.topfarleft {
-
-	margin-left: 2%!important;
-	
-}
-
-.topleft {
-
-	margin-left: 3.4%;
-	margin-right: 3.4%;
-
-}
-
-.topright {
-
-	margin-left:0;
-	
-}
-
-.topfarright {
-
-	margin-left: 2%;
-	margin-right: 2%;
-	
-}
 **/
+	background-color: transparent;
+	padding: 8px 0;
+	min-height: 520px;
 
-.toparea .topfarleft .topwidget {
 
-	
+}
+
+.featbox  .topfarleft { 
+
+	background-color: #F6F6F6;
+	border-right: 1px #D1D1D1 solid;
+	border-left: 1px #D1D1D1 solid;
+	margin-left: 2%;
+	margin-right: 1%;
+	width: 13.6%;
+
+}
+
+.featbox  .topleft { 
+
+	background-color: #F6F6F6;
+	border-right: 1px #D1D1D1 solid;
+	border-left: 1px #D1D1D1 solid;	
+	margin-left: 1%;
+	margin-right: 1%;
+	width: 47.6%;
+
+}
+
+.featbox  .topright { 
+
+	background-color: #F6F6F6;
+	border-right: 1px #D1D1D1 solid;
+	border-left: 1px #D1D1D1 solid;	
+	margin-left: 1%;
+	margin-right: 1%;
+	width: 13.6%
+
+}
+
+.featbox  .topfarright { 
+
+	background-color: #F6F6F6;
+	border-right: 1px #D1D1D1 solid;
+	border-left: 1px #D1D1D1 solid;	
+	margin-left: 1%;
+	margin-right: 2%;
+	width: 13.6%;
+
+}
+
+.toptitle, .topexcerpt, .topwidgetarea {
+
+	padding: 0 2%;
 
 }

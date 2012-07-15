@@ -12,4 +12,13 @@ foreach ($sidebars as $sidebar) {
 
 require ( get_template_directory() . '/includes/theme-options.php' );
 
+if ( function_exists( 'add_theme_support' ) ) {
+	add_theme_support( 'post-thumbnails' );
+}
+
+if ( function_exists( 'add_image_size' ) ) { 
+	add_image_size( 'square-thumb', 800, 800, true );
+	add_image_size( 'horizontal-thumb', 800, 600, true ); //(hard cropped)
+}
+
 ?>
