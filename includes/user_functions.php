@@ -10,4 +10,6 @@ foreach ($sidebars as $sidebar) {
 	));
 }
 
+require ( get_template_directory() . '/includes/theme-options.php' );
+
 ?>

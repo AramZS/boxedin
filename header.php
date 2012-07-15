@@ -110,7 +110,7 @@
 						<div class="twelve columns topwidget">
 							<?php
 							
-								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4, 'posts_per_page' => 1 ) );
+								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4, 'showposts' => 1 ) );
 								
 								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
 								
@@ -132,7 +132,7 @@
 										?>
 									</div>
 								
-								
+								<?php
 								endwhile;
 							
 							?>
@@ -155,7 +155,7 @@
 						<div class="twelve columns topwidget">
 							<?php
 							
-								$featureQueryTwo = new WP_Query( array( 'cat' => 4 ) );
+								$featureQueryTwo = new WP_Query( array('showposts' => 1, 'cat' => 4 ) );
 								
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
 								
@@ -183,7 +183,7 @@
 						<div class="twelve columns topwidget">
 							<?php
 							
-								$featureQueryThree = new WP_Query( array('offset' => 2, 'cat' => 4 ) );
+								$featureQueryThree = new WP_Query( array('showposts' => 1, 'offset' => 2, 'cat' => 4 ) );
 								
 								while ( $featureQueryThree->have_posts() ) : $featureQueryThree->the_post();
 								
@@ -211,7 +211,7 @@
 						<div class="twelve columns topwidget">
 							<?php
 							
-								$featureQueryFour = new WP_Query( array('offset' => 3, 'cat' => 4 ) );
+								$featureQueryFour = new WP_Query( array('showposts' => 1, 'offset' => 3, 'cat' => 4 ) );
 								
 								while ( $featureQueryFour->have_posts() ) : $featureQueryFour->the_post();
 								
