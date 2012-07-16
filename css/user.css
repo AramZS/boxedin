@@ -1,3 +1,8 @@
+#logobox {
+
+	float:left;
+
+}
 
 .toparea {
 
@@ -274,6 +279,24 @@ background-image: -webkit-gradient(
 .article-container .meta {
 	font-size: 9px;
 	font-family: 'Droid Sans', sans-serif;
+}
+
+#sidebar-top-container {
+
+	
+
+}
+
+#sidebar-top-container #sharebox {
+
+	margin-bottom: 30px;
+
+}
+
+#sidebar-top-container #bonusbox  {
+
+	margin-bottom: 10px;
+
 }
 
 .clear 

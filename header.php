@@ -66,6 +66,11 @@
 		<div class="row">
 			<header class="twelve columns" role="banner">
 				<div class="reverie-header">
+					
+					<div id="logobox">
+						<a href="<?php bloginfo('url'); ?>"><img src="http://masonvotes.gmu.edu/wp-content/themes/Mason-Votes-theme/library/imgs/headers/websitelogo.png" width="150px" height="150px" alt="Mason Votes" title="Mason Votes"></a>
+					</div>
+					
 					<h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
 					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 				</div>
