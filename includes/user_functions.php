@@ -61,4 +61,31 @@ if ($floatWPVer >= 3.4){
 		add_action('wp_enqueue_scripts', 'jq_enqueue');
 }
 
+include ('htmlchecker.php');
+
+function zs_killer_excerpt( $text ) {
+	global $post;
+	if ( '' == $text ) {
+		$text = get_the_content('');
+		$text = apply_filters('the_content', $text);
+		$text = str_replace('\]\]\>', ']]&gt;', $text);
+		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+		$text = strip_tags($text, '<p> <strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5> <a>');
+		$excerpt_length = 60; //Would prefer a char count. Not sure how to do it. 
+		$words = explode(' ', $text, $excerpt_length + 1);
+		if (count($words)> $excerpt_length) {
+		  array_pop($words);
+		  array_push($words, '...');
+		  $text = implode(' ', $words);
+		}
+		$text = substr($text, 0, 160);
+		$text = substr($text, 0, strripos($text, " "));
+		$text = trim(preg_replace( '/\s+/', ' ', $text));
+	}
+
+	$text = closetags($text);
+	
+return $text;
+}
+
 ?>
