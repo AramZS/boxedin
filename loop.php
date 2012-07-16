@@ -48,7 +48,14 @@ if (is_home()) {
 		}
 
 $count++;
-endwhile; // End the loop ?>
+endwhile; // End the loop 
+if (($count % 3) != 0) {
+	
+	echo '</div>';
+	
+}
+
+?>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ($wp_query->max_num_pages > 1) : ?>

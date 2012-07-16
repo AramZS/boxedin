@@ -168,9 +168,33 @@ background-image: -webkit-gradient(
 
 }
 
+.topwidgetbox article {
+
+	margin-top: 6px;
+
+}
+
 .topwidgets h6 {
 
+	color: inherit;
+	background-color: #DDD;
+	padding: 2px 6px;
+	border-top: 1px #999 dotted;
+	border-bottom: 1px #999 dotted;
+	margin-bottom: 10px;
+	
+
+}
+
+.topwidgets h6 img {
+
 	display:none;
+
+}
+
+.topwidgets h6 a {
+
+	color: inherit;
 
 }
 

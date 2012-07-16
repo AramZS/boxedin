@@ -120,6 +120,7 @@
 											
 										} ?></a>
 									</div>
+									<div class="clear"></div>	
 									<div class="topmeta">
 										<?php
 										echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
@@ -136,6 +137,7 @@
 										remove_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										?>
 									</div>
+									<div class="clear"></div>	
 								
 								<?php
 								endwhile;
@@ -151,7 +153,7 @@
 						</div>
 					
 					</div>
-				
+					<div class="clear"></div>	
 				</div>
 				<div class="six columns topleft featboxs">
 				
@@ -175,6 +177,7 @@
 											
 										} ?></a>
 									</div>
+									<div class="clear"></div>	
 									<div class="topmeta">
 										<?php
 										echo '<span class="byline author vcard">'. __('Written by', 'reverie') .' <a href="'. get_author_posts_url(get_the_author_meta('id')) .'" rel="author" class="fn">'. get_the_author() .'</a></span>' . ' on ' . '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
@@ -191,15 +194,17 @@
 										?>
 										<p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->
 										<div class="clear"></div>	
-									</div> <?php
-								
+									</div> 
+									<div class="clear"></div>	
+									<?php
+									
 								endwhile;
 							
 							?>
 						</div>
 						
 					</div>
-				
+					<div class="clear"></div>	
 				</div>
 				<div class="two columns topright featboxs">
 				
@@ -221,6 +226,7 @@
 											
 										} ?></a>
 									</div>
+									<div class="clear"></div>	
 									<div class="topmeta">
 										<?php
 										echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
@@ -236,7 +242,9 @@
 										the_excerpt();
 										remove_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										?>
-									</div> <?php
+									</div>
+									<div class="clear"></div>	
+									<?php
 								
 								endwhile;
 							
@@ -249,7 +257,7 @@
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Right"); ?>
 						</div>
-					
+						<div class="clear"></div>	
 					</div>				
 				
 				</div>
@@ -273,6 +281,7 @@
 											
 										} ?></a>
 									</div>
+									<div class="clear"></div>	
 									<div class="topmeta">
 										<?php
 										echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
@@ -288,7 +297,9 @@
 										the_excerpt();
 										remove_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										?>
-									</div> <?php
+									</div> 
+									<div class="clear"></div>	
+									<?php
 								
 								endwhile;
 							
@@ -301,9 +312,9 @@
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Far Right"); ?>
 						</div>
-					
+						<div class="clear"></div>	
 					</div>				
-				
+					
 				</div>
 			
 			</div>
