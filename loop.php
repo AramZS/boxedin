@@ -16,23 +16,38 @@ if (is_home()) {
 		
 		if ($count == 1) {
 		
-			echo '<div class="row">';
+			echo '<div class="homearticles row">';
 		
 		}
 	
 	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('four columns'); ?>>
 		<div class="article-container">
+			<div class="thumb"><center>
+				<a href="<?php the_permalink(); ?>"><?php 
+					if (has_post_thumbnail()){
+											
+						the_post_thumbnail('article-thumb');
+											
+					} ?>
+				</a>
+			</center></div>
 			<header>
-				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 				<?php reverie_entry_meta(); ?>
 			</header>
 			<div class="entry-content">
-		<?php if (is_archive() || is_search()) : // Only display excerpts for archives and search ?>
-			<?php the_excerpt(); ?>
-		<?php else : ?>
-			<?php the_content('Continue reading...'); ?>
-		<?php endif; ?>
+				<?php
+				//Add some filters here to change the excerpt as needed
+				remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+				add_filter('get_the_excerpt', 'zs_killer_short_excerpt');
+				the_excerpt();
+				remove_filter('get_the_excerpt', 'zs_killer_short_excerpt');
+				add_filter('get_the_excerpt', 'wp_trim_excerpt');
+				?>
+				<p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->
+				<div class="clear"></div>	
+			<div class="clear"></div>	
 			</div>
 			<footer>
 				<?php $tag = get_the_tags(); if (!$tag) { } else { ?><p><?php the_tags(); ?></p><?php } ?>
@@ -43,7 +58,7 @@ if (is_home()) {
 
 		if ((($count % 3) == 0) && ($count != 1)){
 		
-			echo '</div><div class="row">';
+			echo '</div><div class="row homearticles">';
 		
 		}
 
@@ -65,7 +80,9 @@ if (($count % 3) != 0) {
 	</nav>
 <?php endif; 
 
-} else {
+} 
+
+else {
 ?>
 
 <?php /* If there are no posts to display, such as an empty archive page */ ?>

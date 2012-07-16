@@ -206,6 +206,12 @@ background-image: -webkit-gradient(
 
 }
 
+.homearticles {
+
+	margin-bottom: 14px;
+
+}
+
 .home article.format-standard .article-container {
 
 	height: 360px;
@@ -223,6 +229,14 @@ background-image: -webkit-gradient(
 	border-color: #CCC;
 
 }
+
+.home article.format-standard .article-container {
+
+	background-color:#F6F6F6;
+
+}
+
+
 
 .clear 
 {

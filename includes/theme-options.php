@@ -177,7 +177,7 @@ function responsive_theme_options_do_page() {
 		$featCatTwo = $options['featCatTwo'];
 		$featCatThree = $options['featCatThree'];
 		$featCatFour = $options['featCatFour'];
-		$sliderCatName = get_cat_name($sliderCat);
+//		$sliderCatName = get_cat_name($sliderCat);
 		 $s = 0;
 		 $h = 0;
 		 $f = 0;
@@ -348,6 +348,117 @@ function responsive_theme_options_do_page() {
 
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
+			
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Highlight Category Options', 'responsive'); ?></a></h3>
+        <div class="rwd-container">
+                <div class="rwd-block">
+                <?php
+                /**
+                 * Slider Options
+                 */
+		 
+		$categories_obj = get_categories('hide_empty=0');
+		$categories = array();
+		foreach ($categories_obj as $cat) {
+			$categories[$cat->cat_ID] = $cat->cat_name;
+		}
+		$default_cat = get_option('default_category');
+		$colorCatOne = $options['colorCatOne'];
+		$colorCatTwo = $options['colorCatTwo'];
+		$colorCatThree = $options['colorCatThree'];
+//		$sliderCatName = get_cat_name($sliderCat);
+		 $s = 0;
+		 $h = 0;
+		 $f = 0;
+                ?>
+                <div class="grid col-300"><?php _e('First Highlighted Category', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        
+			<select name="responsive_theme_options[colorCatOne]" 
+				id="responsive_theme_options[colorCatOne]">
+				<option value="">--</option>
+				    <?php foreach ($categories as $key=>$option) { 
+				      if ($key == $colorCatOne) {
+					$selected = "selected=\"selected\"";
+					$s = 1;
+				      } elseif (($key == $default_cat) && ($s != 1)) {
+				      
+					$selected = "selected=\"selected\"";
+
+				      } else {
+					$selected = "";
+				      }
+				    ?>
+				<option value="<?php echo $key ?>" <?php echo $selected ?>>
+			<?php echo $option; ?></option>
+				  <?php } ?>
+			</select> 
+			
+			<label class="description" for="responsive_theme_options[colorCatOne]"><?php _e('Select first highlighted vertical.', 'responsive'); ?></label>
+		     </div>
+						
+                <div class="grid col-300"><?php _e('Second Highlighted Category', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        
+			<select name="responsive_theme_options[colorCatTwo]" 
+				id="responsive_theme_options[colorCatTwo]">
+				<option value="">--</option>
+				    <?php foreach ($categories as $key=>$option) { 
+				      if ($key == $colorCatTwo) {
+					$selected = "selected=\"selected\"";
+					$h = 1;
+				      } elseif (($key == $default_cat) && ($h != 1)) {
+				      
+					$selected = "selected=\"selected\"";
+
+				      } else {
+					$selected = "";
+				      }
+				    ?>
+				<option value="<?php echo $key ?>" <?php echo $selected ?>>
+			<?php echo $option; ?></option>
+				  <?php } ?>
+			</select> 
+			
+			<label class="description" for="responsive_theme_options[colorCatTwo]"><?php _e('Select second highlighted vertical.', 'responsive'); ?></label>
+		     </div>
+                        
+                <div class="grid col-300"><?php _e('Third Highlighted Category', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        
+			<select name="responsive_theme_options[colorCatThree]" 
+				id="responsive_theme_options[colorCatThree]">
+				<option value="">--</option>
+				    <?php foreach ($categories as $key=>$option) { 
+				      if ($key == $colorCatThree) {
+					$selected = "selected=\"selected\"";
+					$f = 1;
+				      } elseif (($key == $default_cat) && ($f != 1)) {
+				      
+					$selected = "selected=\"selected\"";
+
+				      } else {
+					$selected = "";
+				      }
+				    ?>
+				<option value="<?php echo $key ?>" <?php echo $selected ?>>
+			<?php echo $option; ?></option>
+				  <?php } ?>
+			</select> 
+			
+			<label class="description" for="responsive_theme_options[colorCatThree]"><?php _e('Select third highlighted vertical.', 'responsive'); ?></label>
+		     </div> 
+			 		 
+                       
+		       
+		       <p class="submit">
+                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
+                        </p>
+
+                     			
+                    </div><!-- end of .grid col-620 -->
+                    
+        </div><!-- end of .rwd-block -->			
 
             <h3 class="rwd-toggle"><a href="#"><?php _e('Footer', 'responsive'); ?></a></h3>
             <div class="rwd-container">

@@ -97,7 +97,7 @@
 			<!--- Item top -->
 			
 			
-			
+		<?php if ((is_home()) && ($options['featuredh'] == 0)) { ?>
 			<div class="row toparea featbox">
 			
 				<div class="two columns topfarleft featboxs">
@@ -319,5 +319,6 @@
 				</div>
 			
 			</div>
+		<?php } ?>
 				<!-- Row for main content area -->
 		<div id="main" class="row">
