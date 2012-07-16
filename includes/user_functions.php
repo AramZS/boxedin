@@ -104,13 +104,13 @@ return $text;
 
 function zs_killer_shorter_excerpt( $text ) {
 	global $post;
-	if ( '' == $text ) {
+//	if ( '' == $text ) {
 		$text = get_the_content('');
 		$text = apply_filters('the_content', $text);
 		$text = str_replace('\]\]\>', ']]&gt;', $text);
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-		$text = strip_tags($text, '<p> <strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5> <a>');
-		$excerpt_length = 200; //Would prefer a char count. Not sure how to do it. 
+		$text = strip_tags($text, '<strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5> <a>');
+		$excerpt_length = 100; //Would prefer a char count. Not sure how to do it. 
 		$words = explode(' ', $text, $excerpt_length + 1);
 //		if (count($words)> $excerpt_length) {
 //		  array_pop($words);
@@ -122,11 +122,13 @@ function zs_killer_shorter_excerpt( $text ) {
 		$text = substr($text, 0, strripos($text, " "));
 		$text = trim(preg_replace( '/\s+/', ' ', $text));
 		$text .= '...';
-	}
+//	}
 
 	$text = closetags($text);
 	
 return $text;
 }
+
+
 
 ?>

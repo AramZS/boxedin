@@ -23,7 +23,7 @@ if (is_home()) {
 	?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class('four columns'); ?>>
 		<div class="article-container">
-			<div class="thumb"><center>
+			<div class="thumb articlewrap"><center>
 				<a href="<?php the_permalink(); ?>"><?php 
 					if (has_post_thumbnail()){
 											
@@ -32,24 +32,28 @@ if (is_home()) {
 					} ?>
 				</a>
 			</center></div>
-			<header>
+			<header class="articlewrap">
 				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-				<?php reverie_entry_meta(); ?>
+				<div class="meta">
+					<?php 
+						echo '<span class="byline author vcard">'. __('Written by', 'reverie') .' <a href="'. get_author_posts_url(get_the_author_meta('id')) .'" rel="author" class="fn">'. get_the_author() .'</a></span>' . ' on ' . '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
+					?>
+				</div>
 			</header>
-			<div class="entry-content">
+			<div class="entry-content articlewrap">
 				<?php
 				//Add some filters here to change the excerpt as needed
-				remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-				add_filter('get_the_excerpt', 'zs_killer_short_excerpt');
+//				remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+				add_filter('get_the_excerpt', 'zs_killer_shorter_excerpt');
 				the_excerpt();
-				remove_filter('get_the_excerpt', 'zs_killer_short_excerpt');
-				add_filter('get_the_excerpt', 'wp_trim_excerpt');
+				remove_filter('get_the_excerpt', 'zs_killer_shorter_excerpt');
+//				add_filter('get_the_excerpt', 'wp_trim_excerpt');
 				?>
 				<p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->
 				<div class="clear"></div>	
 			<div class="clear"></div>	
 			</div>
-			<footer>
+			<footer class="articlewrap">
 				<?php $tag = get_the_tags(); if (!$tag) { } else { ?><p><?php the_tags(); ?></p><?php } ?>
 			</footer>
 		</div>

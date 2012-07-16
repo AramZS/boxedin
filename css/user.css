@@ -212,6 +212,12 @@ background-image: -webkit-gradient(
 
 }
 
+.articlewrap {
+
+	margin: 8px;
+
+}
+
 .home article.format-standard .article-container {
 
 	height: 360px;
@@ -236,7 +242,39 @@ background-image: -webkit-gradient(
 
 }
 
+.article-container .thumb {
 
+	margin: 6px 6px;
+
+}
+
+.article-container .thumb img {
+
+	max-height: 150px;
+
+}
+
+.article-container h4 a {
+
+	font-family: Georgia, serif;
+	color: black;
+	font-weight: normal;
+
+}
+
+.article-container .p {
+
+	line-height: 13px;
+	line-height: 1.4rem;
+	font-size: 12px;
+	font-size: 1.2rem;
+
+}
+
+.article-container .meta {
+	font-size: 9px;
+	font-family: 'Droid Sans', sans-serif;
+}
 
 .clear 
 {
