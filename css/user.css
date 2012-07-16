@@ -172,3 +172,21 @@ background-image: -webkit-gradient(
 	width: 92%;
 
 }
+
+.home article.format-standard .article-container {
+
+	height: 360px;
+	width: 100%;
+	border-style: solid;
+	-moz-box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
+	-o-box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
+	box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
+	display: inline;
+	float: left;
+	border-width: 1px;
+	position: relative; 
+	overflow: hidden;
+
+}
+

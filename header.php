@@ -94,9 +94,6 @@
 			</header>
 		</div>
 		
-		<!-- Row for main content area -->
-		<div id="main" class="row">
-		
 			<!--- Item top -->
 			
 			
@@ -285,4 +282,5 @@
 				</div>
 			
 			</div>
-			
+				<!-- Row for main content area -->
+		<div id="main" class="row">
