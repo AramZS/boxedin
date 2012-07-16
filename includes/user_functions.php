@@ -30,4 +30,35 @@ function new_excerpt_more( $more ) {
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+$wpver = get_bloginfo('version');
+$floatWPVer = floatval($wpver);
+
+	//echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>';
+	//Ref:WordPress Bible pg 90
+	
+if ($floatWPVer >= 3.4){
+
+		function jq_setup() {
+				
+				wp_enqueue_script('jquery');
+				wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('jquery'));
+
+		}
+
+		add_action('wp_enqueue_scripts', 'jq_setup');
+	} else {
+			
+		
+		function jq_enqueue() {
+		
+						wp_dequeue_script( 'jquery' );
+						wp_deregister_script( 'jquery' );
+						wp_register_script('jquery', 'http://code.jquery.com/jquery-latest.min.js', '', '1.7.2');
+						wp_enqueue_script('jquery');
+						wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('jquery'));
+		
+		}
+		add_action('wp_enqueue_scripts', 'jq_enqueue');
+}
+
 ?>

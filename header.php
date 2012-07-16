@@ -100,7 +100,7 @@
 			
 			<div class="row toparea featbox">
 			
-				<div class="two columns topfarleft">
+				<div class="two columns topfarleft featboxs">
 				
 					<div class="row topwidgetbox">
 						
@@ -148,7 +148,7 @@
 					</div>
 				
 				</div>
-				<div class="six columns topleft">
+				<div class="six columns topleft featboxs">
 				
 					<div class="row topwidgetbox">
 						
@@ -186,7 +186,7 @@
 					</div>
 				
 				</div>
-				<div class="two columns topright">
+				<div class="two columns topright featboxs">
 				
 					<div class="row topwidgetbox">
 						
@@ -233,7 +233,7 @@
 					</div>				
 				
 				</div>
-				<div class="two columns topfarright">
+				<div class="two columns topfarright featboxs">
 				
 					<div class="row topwidgetbox">
 						
