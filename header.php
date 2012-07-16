@@ -120,6 +120,11 @@
 											
 										} ?></a>
 									</div>
+									<div class="topmeta">
+										<?php
+										echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
+										?>
+									</div>									
 									<div class="toptitle">
 										<h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
 									</div>
@@ -170,12 +175,22 @@
 											
 										} ?></a>
 									</div>
-
+									<div class="topmeta">
+										<?php
+										echo '<span class="byline author vcard">'. __('Written by', 'reverie') .' <a href="'. get_author_posts_url(get_the_author_meta('id')) .'" rel="author" class="fn">'. get_the_author() .'</a></span>' . ' on ' . '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
+										?>
+									</div>		
 									<div class="topexcerpt">
 										<?php
 										//Add some filters here to change the excerpt as needed
+										remove_filter('get_the_excerpt', 'wp_trim_excerpt');
+										add_filter('get_the_excerpt', 'zs_killer_excerpt');
 										the_excerpt();
+										remove_filter('get_the_excerpt', 'zs_killer_excerpt');
+										add_filter('get_the_excerpt', 'wp_trim_excerpt');
 										?>
+										<p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->
+										<div class="clear"></div>	
 									</div> <?php
 								
 								endwhile;
@@ -206,6 +221,11 @@
 											
 										} ?></a>
 									</div>
+									<div class="topmeta">
+										<?php
+										echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
+										?>
+									</div>											
 									<div class="toptitle">
 										<h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
 									</div>
@@ -253,6 +273,11 @@
 											
 										} ?></a>
 									</div>
+									<div class="topmeta">
+										<?php
+										echo '<time class="updated" datetime="'. get_the_time('c') .'" pubdate>'. sprintf(__('%s, %s.', 'reverie'), get_the_time('F j, Y'), get_the_time()) .'</time>';
+										?>
+									</div>											
 									<div class="toptitle">
 										<h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
 									</div>
