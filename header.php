@@ -150,10 +150,11 @@
 					
 						<div class="twelve columns topwidget">
 							<?php dynamic_sidebar("Home Header Far Left"); ?>
+						
 						</div>
-					
+						<div class="clear"></div>	
 					</div>
-					<div class="clear"></div>	
+					
 				</div>
 				<div class="six columns topleft featboxs">
 				

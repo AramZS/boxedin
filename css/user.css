@@ -1,3 +1,4 @@
+
 .toparea {
 
 	margin-bottom: 1%;
@@ -223,3 +224,9 @@ background-image: -webkit-gradient(
 
 }
 
+.clear 
+{
+
+	clear:both;
+
+}
