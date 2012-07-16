@@ -107,7 +107,7 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns topwidget">
+						<div class="twelve columns topwidget article">
 							<?php
 							
 								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4, 'showposts' => 1 ) );
@@ -116,20 +116,22 @@
 								
 									?>
 									<div class="topthumb">
-										<?php 
+										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
-										} ?>
+										} ?></a>
 									</div>
 									<div class="toptitle">
-										<h4><?php echo the_title(); ?></h4>
+										<h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
 									</div>
 									<div class="topexcerpt">
 										<?php
 										//Add some filters here to change the excerpt as needed
+										add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										the_excerpt();
+										remove_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										?>
 									</div>
 								
@@ -153,24 +155,25 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns topwidget">
+						<div class="twelve columns topwidget article">
 							<?php
 							
 								$featureQueryTwo = new WP_Query( array('showposts' => 1, 'cat' => 4 ) );
 								
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
 									?>
+									<div class="toptitle">
+										<h2><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
+									</div>									
 									<div class="topthumb">
-										<?php 
+										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('horizontal-thumb');
 											
-										} ?>
+										} ?></a>
 									</div>
-									<div class="toptitle">
-										<h2><?php echo the_title(); ?></h2>
-									</div>
+
 									<div class="topexcerpt">
 										<?php
 										//Add some filters here to change the excerpt as needed
@@ -184,20 +187,13 @@
 						</div>
 						
 					</div>
-					<div class="row topwidgetbox">
-					
-						<div class="twelve columns topwidget">
-							<?php dynamic_sidebar("Home Header Left"); ?>
-						</div>
-					
-					</div>
 				
 				</div>
 				<div class="two columns topright">
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns topwidget">
+						<div class="twelve columns topwidget article">
 							<?php
 							
 								$featureQueryThree = new WP_Query( array('showposts' => 1, 'offset' => 2, 'cat' => 4 ) );
@@ -206,20 +202,22 @@
 								
 									?>
 									<div class="topthumb">
-										<?php 
+										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
-										} ?>
+										} ?></a>
 									</div>
 									<div class="toptitle">
-										<h4><?php echo the_title(); ?></h4>
+										<h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
 									</div>
 									<div class="topexcerpt">
 										<?php
 										//Add some filters here to change the excerpt as needed
+										add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										the_excerpt();
+										remove_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										?>
 									</div> <?php
 								
@@ -242,7 +240,7 @@
 				
 					<div class="row topwidgetbox">
 						
-						<div class="twelve columns topwidget">
+						<div class="twelve columns topwidget article">
 							<?php
 							
 								$featureQueryFour = new WP_Query( array('showposts' => 1, 'offset' => 3, 'cat' => 4 ) );
@@ -251,20 +249,22 @@
 								
 									?>
 									<div class="topthumb">
-										<?php 
+										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
-										} ?>
+										} ?></a>
 									</div>
 									<div class="toptitle">
-										<h4><?php echo the_title(); ?></h4>
+										<h4><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h4>
 									</div>
 									<div class="topexcerpt">
 										<?php
 										//Add some filters here to change the excerpt as needed
+										add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										the_excerpt();
+										remove_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 										?>
 									</div> <?php
 								
