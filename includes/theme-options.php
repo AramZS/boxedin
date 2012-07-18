@@ -458,7 +458,70 @@ function responsive_theme_options_do_page() {
                      			
                     </div><!-- end of .grid col-620 -->
                     
-        </div><!-- end of .rwd-block -->			
+        </div><!-- end of .rwd-block -->
+
+            <h3 class="rwd-toggle"><a href="#"><?php _e('Top Menu Items', 'responsive'); ?></a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block">
+                <?php
+                /**
+                 * Top Menu Items
+                 */
+                ?>
+
+                    <div class="grid col-300"><?php _e('Menu Button Size', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <button class="btn btn-mini btn-primary">mini</button>
+                        <button class="btn btn-small btn-primary">small</button>
+                        <button class="btn btn-large btn-primary">large</button>
+                        </div><!-- end of .grid col-620 -->
+
+                             <div class="grid col-300"><?php _e('Which button size would you like?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[btn_size]" class="regular-text" type="text" name="responsive_theme_options[btn_size]" value="<?php if (!empty($options['btn_size'])) esc_attr_e($options['btn_size']); ?>" />
+                        <br /><label class="description" for="responsive_theme_options[btn_size]"><?php _e('Leave blank for default size.', 'responsive'); ?></label>
+                    </div>  
+
+                            
+				<div class="grid col-300"><?php _e('Menu Button One Color', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <button class="btn btn-large"> </button>
+                        <button class="btn btn-large btn-primary">primary</button>
+                        <button class="btn btn-large btn-info">info</button>
+                        <button class="btn btn-large btn-success">success</button>
+                        <button class="btn btn-large btn-warning">warning</button>
+                        <button class="btn btn-large btn-danger">danger</button>
+                        <button class="btn btn-large btn-inverse">inverse</button>
+                    </div><!-- end of .grid col-620 -->
+
+                    <div class="grid col-300"><?php _e('What color would you like for the first menu button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[cta_color_one]" class="regular-text" type="text" name="responsive_theme_options[cta_color_one]" value="<?php if (!empty($options['cta_color_one'])) esc_attr_e($options['cta_color_one']); ?>" />
+                        <br /><label class="description" for="responsive_theme_options[cta_color_one]"><?php _e('Leave blank for default grey or type in button label above.', 'responsive'); ?></label>
+                    </div>
+
+                    <div class="grid col-300"><?php _e('What color would you like for the second menu button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[cta_color_two]" class="regular-text" type="text" name="responsive_theme_options[cta_color_two]" value="<?php if (!empty($options['cta_color_two'])) esc_attr_e($options['cta_color_two']); ?>" />
+                        <br /><label class="description" for="responsive_theme_options[cta_color_two]"><?php _e('Leave blank for default grey or type in button label above.', 'responsive'); ?></label>
+                    </div> 
+
+                    <div class="grid col-300"><?php _e('What color would you like for the other menu button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[cta_color_three]" class="regular-text" type="text" name="responsive_theme_options[cta_color_three]" value="<?php if (!empty($options['cta_color_three'])) esc_attr_e($options['cta_color_three']); ?>" />
+                        <br /><label class="description" for="responsive_theme_options[cta_color_three]"><?php _e('Leave blank for default grey or type in button label above.', 'responsive'); ?></label>
+                    </div> 					
+                        
+                        <p class="submit">
+                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
+                        </p>
+        
+                    
+                    
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->
+
+			
 
             <h3 class="rwd-toggle"><a href="#"><?php _e('Footer', 'responsive'); ?></a></h3>
             <div class="rwd-container">

@@ -68,10 +68,31 @@
 				<div class="reverie-header">
 					
 					<div id="logobox">
-						<a href="<?php bloginfo('url'); ?>"><img src="http://masonvotes.gmu.edu/wp-content/themes/Mason-Votes-theme/library/imgs/headers/websitelogo.png" width="150px" height="150px" alt="Mason Votes" title="Mason Votes"></a>
+						<a href="<?php bloginfo('url'); ?>"><img class="mainlogo" src="http://masonvotes.gmu.edu/wp-content/themes/Mason-Votes-theme/library/imgs/headers/websitelogo.png" width="150px" height="150px" alt="Mason Votes" title="Mason Votes"></a>
 					</div>
 					
-					<h1><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+					<nav class="top-head-menu">
+						<?php /*
+							You can use Foundation Tabs to get a better responsive design.
+							Our navigation menu. If one isn't filled out, wp_nav_menu falls
+							back to wp_page_menu. The menu assigned to the primary position is
+							the one used. If none is assigned, the menu with the lowest ID is
+							used. */
+							
+							wp_nav_menu( array(
+							'theme_location' => 'topmost_menu',
+							'container' =>false,
+							'menu_class' => '',
+							'echo' => true,
+							'before' => '',
+							'after' => '',
+							'link_before' => '',
+							'link_after' => '',
+							'depth' => 0,
+							'items_wrap' => '<dl class="topmostmenu">%3$s</dl>',
+							'walker' => new description_walker())
+						); ?>
+					</nav>
 					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 				</div>
 				<nav role="navigation">
@@ -91,8 +112,8 @@
 						'after' => '',
 						'link_before' => '',
 						'link_after' => '',
-						'depth' => 0,
-						'items_wrap' => '<dl class="nav hide-on-phones"><dt>Blog Menu:</dt>%3$s</dl>',
+						'depth' => 1,
+						'items_wrap' => '<dl class="nav hide-on-phones">%3$s</dl>',
 						'walker' => new description_walker())
 					); ?>
 				</nav>
@@ -173,7 +194,7 @@
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
 									?>
 									<div class="toptitle">
-										<h2><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
+										<h2 class="maintitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
 									</div>									
 									<div class="topthumb">
 										<a href="<?php the_permalink(); ?>"><?php 

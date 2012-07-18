@@ -4,6 +4,18 @@
 
 }
 
+.topmostmenu {
+
+	text-align:justify;
+
+}
+
+.btn a {
+
+	color: white;
+
+}
+
 .toparea {
 
 	margin-bottom: 1%;
@@ -139,11 +151,9 @@ background-image: -webkit-gradient(
 	-o-text-overflow: ellipsis;
 }
 
-}
+.topleft .maintitle {
 
-.topleft .toptitle h2 {
-
-	margin-top: 9px;
+	padding-top: 9px;
 	font-family: 'Droid Sans', sans-serif;
 
 }
@@ -263,7 +273,7 @@ background-image: -webkit-gradient(
 
 .article-container h4 a {
 
-	font-family: Georgia, serif;
+	font-family: Georgia, Times New Roman, serif;
 	color: black;
 	font-weight: normal;
 
