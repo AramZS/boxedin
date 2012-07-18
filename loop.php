@@ -41,20 +41,20 @@ if (is_home()) {
 				</div>
 			</header>
 			<div class="entry-content articlewrap">
-				<?php
+				<div class="excerptwrap"><?php
 				//Add some filters here to change the excerpt as needed
 //				remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 				add_filter('get_the_excerpt', 'zs_killer_shorter_excerpt');
 				the_excerpt();
 				remove_filter('get_the_excerpt', 'zs_killer_shorter_excerpt');
 //				add_filter('get_the_excerpt', 'wp_trim_excerpt');
-				?>
-				<p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->
-				<div class="clear"></div>	
+				?></div>
+				
 			<div class="clear"></div>	
 			</div>
 			<footer class="articlewrap">
-				<?php $tag = get_the_tags(); if (!$tag) { } else { ?><p><?php the_tags(); ?></p><?php } ?>
+
+				<?php $tag = get_the_tags(); if (!$tag) { } else { ?><p class="taggraf"><?php the_tags('<span class="taggedwith">#</span>'); ?></p><?php } ?>
 			</footer>
 		</div>
 	</article>	

@@ -228,7 +228,7 @@ background-image: -webkit-gradient(
 .home article.format-standard .article-container {
 
 	height: 360px;
-	width: 100%;
+	width: 96.6%;
 	border-style: solid;
 	-moz-box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
@@ -236,7 +236,7 @@ background-image: -webkit-gradient(
 	box-shadow: rgba(0, 0, 0, 0.33) 1px 1px 0;
 	display: inline;
 	float: left;
-	border-width: 1px;
+	border-width: 5px;
 	position: relative; 
 	overflow: hidden;
 	border-color: #CCC;
@@ -251,7 +251,7 @@ background-image: -webkit-gradient(
 
 .article-container .thumb {
 
-	margin: 6px 6px;
+	margin: 0px 0px 6px;
 
 }
 
@@ -281,6 +281,52 @@ background-image: -webkit-gradient(
 .article-container .meta {
 	font-size: 9px;
 	font-family: 'Droid Sans', sans-serif;
+}
+
+.excerptwrap {
+
+	height: 90px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 18px;
+
+}
+
+footer.articlewrap {
+
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 10px;
+	font-size:1rem;
+	margin: 0;
+	padding: 4px 3%;
+	background-color: #CCC;
+	height: 17px;
+	position: absolute;
+	width: 95%;
+	top: 334px;
+	border-top: 1px dotted black;
+
+}
+
+footer.articlewrap p {
+
+	width:100%;
+	white-space:nowrap; 	
+	font-size:10px;
+	font-size:1rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+}
+
+.taggedwith {
+
+	padding-right: 4px;
+	border-right: 1px dotted black;
+	margin-right: 4px;
+
+	
+
 }
 
 #sidebar-top-container {
