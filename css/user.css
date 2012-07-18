@@ -39,6 +39,12 @@
 
 }
 
+.topmostmenu .btn-success:hover {
+
+	background-color: #1f6239;
+
+}
+
 .topmostmenu .btn-warning {
 
 	background-color: #e2a82a;
@@ -53,6 +59,12 @@
 	border-color: #E09F11 #E09F11 #AD6704;
 	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 	filter: progid:dximagetransform.microsoft.gradient(enabled=false);	
+
+}
+
+.topmostmenu .btn-warning:hover {
+
+	background-color: #e2a82a;
 
 }
 
