@@ -43,6 +43,8 @@ if ($floatWPVer >= 3.4){
 				
 				wp_enqueue_script('jquery');
 				wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('jquery'));
+				wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
+				wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 
 		}
 
@@ -57,7 +59,9 @@ if ($floatWPVer >= 3.4){
 						wp_register_script('jquery', 'http://code.jquery.com/jquery-latest.min.js', '', '1.7.2');
 						wp_enqueue_script('jquery');
 						wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('jquery'));
-		
+						wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
+						wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
+						
 		}
 		add_action('wp_enqueue_scripts', 'jq_enqueue');
 }
@@ -110,7 +114,7 @@ function zs_killer_shorter_excerpt( $text ) {
 		$text = str_replace('\]\]\>', ']]&gt;', $text);
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 		$text = strip_tags($text, '<strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5> <a>');
-		$excerpt_length = 100; //Would prefer a char count. Not sure how to do it. 
+		$excerpt_length = 300; //Would prefer a char count. Not sure how to do it. 
 		$words = explode(' ', $text, $excerpt_length + 1);
 //		if (count($words)> $excerpt_length) {
 //		  array_pop($words);
@@ -118,8 +122,10 @@ function zs_killer_shorter_excerpt( $text ) {
 //		  $text = implode(' ', $words);
 //		}
 		//via http://wordpress.org/support/topic/limit-excerpt-length-by-characters
-		$text = substr($text, 0, 160);
-		$text = substr($text, 0, strripos($text, " "));
+		if ((strlen($text)) > 160){ 
+			$text = substr($text, 0, 160);
+			$text = substr($text, 0, strripos($text, " "));	
+		}
 		$text = trim(preg_replace( '/\s+/', ' ', $text));
 		$text .= '...';
 //	}

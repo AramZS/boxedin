@@ -102,7 +102,7 @@
 			<!--- Item top -->
 			
 			
-		<?php if ((is_home()) && ($options['featuredh'] == 0)) { ?>
+		<?php if ((is_home()) && ($options['featuredh'] == 0) && (!(is_paged()))) { ?>
 			<div class="row toparea featbox">
 			
 				<div class="two columns topfarleft featboxs">

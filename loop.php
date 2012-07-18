@@ -9,7 +9,7 @@ if (is_home()) {
 	</div>
 	<?php get_search_form(); ?>	
 <?php endif; ?>
-
+<div class="posts-boxed">
 <?php /* Start loop */ $count = 1; ?>
 <?php while (have_posts()) : the_post(); ?>
 	<?php 
@@ -75,7 +75,7 @@ if (($count % 3) != 0) {
 }
 
 ?>
-
+</div>
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if ($wp_query->max_num_pages > 1) : ?>
 	<nav id="post-nav">
