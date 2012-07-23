@@ -68,7 +68,9 @@
 				<div class="reverie-header">
 					
 					<div id="logobox">
-						<a href="<?php bloginfo('url'); ?>"><img class="mainlogo" src="http://masonvotes.gmu.edu/wp-content/themes/Mason-Votes-theme/library/imgs/headers/websitelogo.png" width="150px" height="150px" alt="Mason Votes" title="Mason Votes"></a>
+						<a href="<?php bloginfo('url'); ?>">
+							<img class="mainlogo" src="<?php echo $options['site_logo']; ?>" <?php if (isset($options['site_logo_w'])){ echo 'width="' . $options['site_logo_w'] . 'px"'; }  if (isset($options['site_logo_w'])){ echo 'height="' . $options['site_logo_h'] . 'px"'; } ?> alt="Mason Votes" title="Mason Votes">
+						</a>
 					</div>
 					
 					<nav class="top-head-menu">

@@ -310,16 +310,16 @@ function responsive_theme_options_do_page() {
                         <label class="description" for="responsive_theme_options[site_logo]"><?php _e('*Complete URL path', 'responsive'); ?></label>
 					</div>
 						
-				 <div class="grid col-300"><?php _e('Custom Secondary Logo', 'responsive'); ?></div>
+				 <div class="grid col-300"><?php _e('Custom Site Logo Width', 'responsive'); ?></div>
 					<div class="grid col-620 fit">
-						<input id="responsive_theme_options[site_secondary_logo]" class="regular-text" type="text" name="responsive_theme_options[site_secondary_logo]" value="<?php if (!empty($options['site_secondary_logo'])) esc_attr_e($options['site_secondary_logo']); ?>" />
-                        <label class="description" for="responsive_theme_options[site_secondary_logo]"><?php _e('*Complete URL path', 'responsive'); ?></label>
+						<input id="responsive_theme_options[site_logo_w]" class="regular-text" type="text" name="responsive_theme_options[site_logo_w]" value="<?php if (!empty($options['site_logo_w'])) esc_attr_e($options['site_logo_w']); ?>" />
+                        <label class="description" for="responsive_theme_options[site_logo_w]"><?php _e('*Pixel Width', 'responsive'); ?></label>
 					</div>
 						
-				 <div class="grid col-300"><?php _e('Secondary Logo URL', 'responsive'); ?></div>
+				 <div class="grid col-300"><?php _e('Custom Site Logo Height', 'responsive'); ?></div>
 					<div class="grid col-620 fit">
-						<input id="responsive_theme_options[secondary_logo_url]" class="regular-text" type="text" name="responsive_theme_options[secondary_logo_url]" value="<?php if (!empty($options['secondary_logo_url'])) esc_attr_e($options['secondary_logo_url']); ?>" />
-                        <label class="description" for="responsive_theme_options[secondary_logo_url]"><?php _e('*Complete URL path', 'responsive'); ?></label>
+						<input id="responsive_theme_options[site_logo_h]" class="regular-text" type="text" name="responsive_theme_options[site_logo_h]" value="<?php if (!empty($options['site_logo_h'])) esc_attr_e($options['site_logo_h']); ?>" />
+                        <label class="description" for="responsive_theme_options[site_logo_h]"><?php _e('*Pixel Height', 'responsive'); ?></label>
                         
                         <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
@@ -749,8 +749,8 @@ function responsive_theme_options_validate($input) {
     $input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
     $input['cta_url'] = esc_url_raw($input['cta_url']);
     $input['site_logo'] = esc_url_raw($input['site_logo']);
-	$input['site_secondary_logo'] = esc_url_raw($input['site_secondary_logo']);
-	$input['secondary_logo_url'] = esc_url_raw($input['secondary_logo_url']);
+	$input['site_logo_h'] = wp_kses_stripslashes($input['site_logo_h']);
+	$input['site_logo_w'] = wp_kses_stripslashes($input['site_logo_w']);
     $input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
     $input['cta_color'] = wp_kses_stripslashes($input['cta_color']);
     $input['cta_btn'] = wp_kses_stripslashes($input['cta_btn']);

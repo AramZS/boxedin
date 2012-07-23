@@ -121,6 +121,20 @@ function bootstrap_css() {
 }
 add_action('wp_head', 'bootstrap_css');
 
+function user_gen_css() {
+?>
+	<style type="text/css" media="screen">
+		<?php
+		
+		
+		
+		?>
+	</style>
+<?php
+}
+add_action('wp_head', 'user_gen_css');
+
+
 include ('htmlchecker.php');
 
 function zs_killer_excerpt( $text ) {
