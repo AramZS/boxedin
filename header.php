@@ -58,7 +58,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	
+	<?php $options = get_option('responsive_theme_options'); ?>
 	<!-- Start the main container -->
 	<div id="container" class="container" role="document">
 		
@@ -123,7 +123,19 @@
 			<!--- Item top -->
 			
 			
-		<?php if ((is_home()) && ($options['featuredh'] == 0) && (!(is_paged()))) { ?>
+		<?php if ((is_home()) && ($options['featuredh'] == 0) && (!(is_paged()))) { 
+		
+
+			$featCatOne = $options['featCatOne'];
+			$featCatTwo = $options['featCatTwo'];
+			$featCatThree = $options['featCatThree'];
+			$featCatFour = $options['featCatFour'];
+			$offset = 0;
+			global $excludeset;
+			$excludeset = array();
+			
+		
+		?>
 			<div class="row toparea featbox">
 			
 				<div class="two columns topfarleft featboxs">
@@ -133,7 +145,16 @@
 						<div class="twelve columns topwidget article">
 							<?php
 							
-								$featureQueryOne = new WP_Query( array('offset' => 1, 'cat' => 4, 'showposts' => 1 ) );
+								if (is_cat_option_set($featCatOne)) {
+								
+									$featureQueryOne = new WP_Query( array('cat' => $featCatOne, 'showposts' => 1 ) );
+								
+								} else {
+									$offset++;
+									$featureQueryOne = new WP_Query( array('offset' => $offset, 'showposts' => 1 ) );
+								
+								}
+								
 								
 								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
 								
@@ -166,7 +187,10 @@
 									<div class="clear"></div>	
 								
 								<?php
+								$excludeset[] = get_the_ID();
 								endwhile;
+								wp_reset_postdata();
+								wp_reset_query();
 							
 							?>
 						</div>
@@ -188,9 +212,13 @@
 						
 						<div class="twelve columns topwidget article">
 							<?php
-							
-								$featureQueryTwo = new WP_Query( array('showposts' => 1, 'cat' => 4 ) );
+								if (is_cat_option_set($featCatTwo)) {
+									
+									$featureQueryTwo = new WP_Query( array('cat' => $featCatTwo, 'showposts' => 1, 'post__not_in' => $excludeset ) );
 								
+								} else {							
+									$featureQueryTwo = new WP_Query( array('showposts' => 1) );
+								}
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
 									?>
 									<div class="toptitle">
@@ -224,9 +252,10 @@
 									</div> 
 									<div class="clear"></div>	
 									<?php
-									
+								$excludeset[] = get_the_ID();	
 								endwhile;
-							
+								wp_reset_postdata();
+								wp_reset_query();
 							?>
 						</div>
 						
@@ -239,9 +268,15 @@
 						
 						<div class="twelve columns topwidget article">
 							<?php
-							
-								$featureQueryThree = new WP_Query( array('showposts' => 1, 'offset' => 2, 'cat' => 4 ) );
+								if (is_cat_option_set($featCatThree)) {
 								
+									$featureQueryThree = new WP_Query( array('cat' => $featCatThree, 'showposts' => 1, 'post__not_in' => $excludeset ) );
+								
+								} else {	
+									$offset++;
+									$featureQueryThree = new WP_Query( array('showposts' => 1, 'offset' => $offset) );
+								
+								}
 								while ( $featureQueryThree->have_posts() ) : $featureQueryThree->the_post();
 								
 									?>
@@ -272,9 +307,10 @@
 									</div>
 									<div class="clear"></div>	
 									<?php
-								
+								$excludeset[] = get_the_ID();
 								endwhile;
-							
+								wp_reset_postdata();
+								wp_reset_query();							
 							?>
 						</div>
 						
@@ -294,9 +330,14 @@
 						
 						<div class="twelve columns topwidget article">
 							<?php
-							
-								$featureQueryFour = new WP_Query( array('showposts' => 1, 'offset' => 3, 'cat' => 4 ) );
+								if (is_cat_option_set($featCatFour)) {
 								
+									$featureQueryFour = new WP_Query( array('cat' => $featCatFour, 'showposts' => 1, 'post__not_in' => $excludeset ) );
+								
+								} else {	
+									$offset++;							
+									$featureQueryFour = new WP_Query( array('showposts' => 1, 'offset' => $offset ) );
+								}
 								while ( $featureQueryFour->have_posts() ) : $featureQueryFour->the_post();
 								
 									?>
@@ -327,9 +368,10 @@
 									</div> 
 									<div class="clear"></div>	
 									<?php
-								
+								$excludeset[] = get_the_ID();
 								endwhile;
-							
+								wp_reset_postdata();
+								wp_reset_query();							
 							?>
 						</div>
 						
@@ -345,6 +387,98 @@
 				</div>
 			
 			</div>
-		<?php } ?>
+		<?php }
+		
+			//One day I will replace this with sweet sweet AJAX.
+			//That day is not today. 
+		
+		if ((is_home()) && ($options['featuredh'] == 0) && ((is_paged()))) {
+		
+			$featCatOne = $options['featCatOne'];
+			$featCatTwo = $options['featCatTwo'];
+			$featCatThree = $options['featCatThree'];
+			$featCatFour = $options['featCatFour'];
+			$offset = 0;
+			global $excludeset;
+			$excludeset = array();
+		
+								if (is_cat_option_set($featCatOne)) {
+								
+									$featureQueryOne = new WP_Query( array('cat' => $featCatOne, 'showposts' => 1 ) );
+								
+								} else {
+									$offset++;
+									$featureQueryOne = new WP_Query( array('offset' => $offset, 'showposts' => 1 ) );
+								
+								}
+								
+								
+								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
+								
+								$excludeset[] = get_the_ID();
+								
+								endwhile;
+								wp_reset_postdata();
+								wp_reset_query();
+								if (is_cat_option_set($featCatTwo)) {
+								
+									$featureQueryTwo = new WP_Query( array('cat' => $featCatTwo, 'showposts' => 1 ) );
+								
+								} else {
+									$offset++;
+									$featureQueryTwo = new WP_Query( array('offset' => $offset, 'showposts' => 1 ) );
+								
+								}
+								
+								
+								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
+								
+								$excludeset[] = get_the_ID();
+								
+								endwhile;
+								wp_reset_postdata();
+								wp_reset_query();
+								if (is_cat_option_set($featCatThree)) {
+								
+									$featureQueryThree = new WP_Query( array('cat' => $featCatThree, 'showposts' => 1 ) );
+								
+								} else {
+									$offset++;
+									$featureQueryThree = new WP_Query( array('offset' => $offset, 'showposts' => 1 ) );
+								
+								}
+								
+								
+								while ( $featureQueryThree->have_posts() ) : $featureQueryThree->the_post();
+								
+								$excludeset[] = get_the_ID();
+								
+								endwhile;
+								wp_reset_postdata();
+								wp_reset_query();
+								if (is_cat_option_set($featCatFour)) {
+								
+									$featureQueryFour = new WP_Query( array('cat' => $featCatFour, 'showposts' => 1 ) );
+								
+								} else {
+									$offset++;
+									$featureQueryFour = new WP_Query( array('offset' => $offset, 'showposts' => 1 ) );
+								
+								}
+								
+								
+								while ( $featureQueryFour->have_posts() ) : $featureQueryFour->the_post();
+								
+								$excludeset[] = get_the_ID();
+								
+								endwhile;
+								wp_reset_postdata();
+								wp_reset_query();								
+		
+		
+		}
+		
+		
+		?>
 				<!-- Row for main content area -->
 		<div id="main" class="row">

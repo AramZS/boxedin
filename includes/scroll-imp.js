@@ -1,8 +1,6 @@
 jQuery(document).ready(function () {
 
-
-  jQuery(function(){
-    
+ 
     var container = jQuery('.post-box');
     
     container.infinitescroll({
@@ -14,9 +12,10 @@ jQuery(document).ready(function () {
           img: 'wp-content/themes/boxedin/images/ajax-loader.gif'
         }
       }
-    );
     
-  });
+	
+	);
+	
 
 
 });

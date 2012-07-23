@@ -7,9 +7,11 @@
 		<div id="content" class="twelve columns" role="main">
 	
 			<div class="post-box">
-				<?php get_template_part('loop', 'index'); ?>
+				<?php 
+				get_template_part('loop', 'index');				
+				?>
 			</div>
-
+			
 		</div><!-- End Content row -->
 	
 	<?php } else { ?>

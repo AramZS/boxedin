@@ -72,7 +72,8 @@ if ($floatWPVer >= 3.4){
 				wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
 				wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 				wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.js', array('jquery'));
-
+				wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/waypoints.js', array('jquery'));
+				
 		}
 
 		add_action('wp_enqueue_scripts', 'jq_setup');
@@ -89,10 +90,18 @@ if ($floatWPVer >= 3.4){
 						wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
 						wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 						wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.js', array('jquery'));
+						wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/waypoints.js', array('jquery'));
 						
 		}
 		add_action('wp_enqueue_scripts', 'jq_enqueue');
 }
+
+function ajaxery() {
+
+
+	
+}
+add_action('wp_footer', 'ajaxery');
 
 function font_setup() {	
 			?>
@@ -149,7 +158,7 @@ function zs_killer_shorter_excerpt( $text ) {
 		$text = str_replace('\]\]\>', ']]&gt;', $text);
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 		$text = strip_tags($text, '<strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5> <a>');
-		$excerpt_length = 300; //Would prefer a char count. Not sure how to do it. 
+		$excerpt_length = 300; 
 		$words = explode(' ', $text, $excerpt_length + 1);
 //		if (count($words)> $excerpt_length) {
 //		  array_pop($words);
@@ -170,6 +179,27 @@ function zs_killer_shorter_excerpt( $text ) {
 return $text;
 }
 
+function is_cat_option_set($catoption) {
+
+	$default_cat = get_option('default_category');
+	if (($catoption != $default_cat) && ($catoption != '') && ($catoption > 0)) {
+	
+		return TRUE;
+	
+	} else {
+	
+		return FALSE;
+	
+	}
+
+}
+function store_post_IDs($postID, $thearray) {
+
+	$thearray[] = $postID;
+	return $thearray;
+	
+
+} 
 
 
 ?>

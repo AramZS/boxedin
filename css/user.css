@@ -305,6 +305,17 @@ background-image: -webkit-gradient(
 
 }
 
+.home article.format-aside .article-container, .home article.format-video .article-container {
+
+	height: 370px;
+	width: 96.6%;
+	display: inline;
+	float: left;
+	position: relative; 
+	overflow: hidden;
+
+}
+
 .home article.format-standard .article-container {
 
 	background-color:#F6F6F6;
@@ -367,6 +378,12 @@ footer.articlewrap {
 	width: 95%;
 	top: 334px;
 	border-top: 1px dotted black;
+
+}
+
+.format-aside footer.article-wrap, .format-video footer.article-wrap {
+
+	top: 344px;
 
 }
 
