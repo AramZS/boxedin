@@ -16,6 +16,15 @@ foreach ($sidebars as $sidebar) {
 	));
 }
 
+register_sidebar(array('name'=> 'Header Widget',
+		'id' => 'header-widget',
+		'description' => 'Widget space in the header, good for candidate verticals. Fill with linked images. Do not use title. Max height: 136px.',
+		'before_widget' => '<div class="header-inner-widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<span class="none">',
+		'after_title' => '</span>'
+));
+
 require ( get_template_directory() . '/includes/theme-options.php' );
 
 function jsvar_setup() {	

@@ -553,6 +553,75 @@ function responsive_theme_options_do_page() {
                     
                 </div><!-- end of .rwd-block -->
             </div><!-- end of .rwd-container -->
+			
+			
+           <h3 class="rwd-toggle"><a href="#"><?php _e('Top Preview Area', 'responsive'); ?></a></h3>
+            <div class="rwd-container">
+                <div class="rwd-block">
+                <?php
+                /**
+                 * Use widgetized area
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Use Widgetized Area', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+					    <input id="responsive_theme_options[top_widget_on]" name="responsive_theme_options[top_widget_on]" type="checkbox" value="1" <?php isset($options['top_widget_on']) ? checked( '1', $options['top_widget_on'] ) : checked('0', '1'); ?> />
+						<label class="description" for="responsive_theme_options[top_widget_on]"><?php _e('Check to disable', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->                
+				
+				<?php
+                /**
+                 * Header Cat Select
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Header Categories to Use', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[header_cats]" class="regular-text" type="text" name="responsive_theme_options[header_cats]" value="<?php if (!empty($options['header_cats'])) esc_attr_e($options['header_cats']); ?>" />
+                        <label class="description" for="responsive_theme_options[header_cats]"><?php _e('Type in the Category ID numbers of the categories you want featured in the header. Seperate with commas, no spaces. Find after tag_id in the URL.', 'responsive'); ?></label>
+					</div>					
+                        
+                <?php
+                /**
+                 * Use header category text
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Show text on top of header categories.', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+					    <input id="responsive_theme_options[head_cat_text_toggle]" name="responsive_theme_options[head_cat_text_toggle]" type="checkbox" value="1" <?php isset($options['head_cat_text_toggle']) ? checked( '1', $options['head_cat_text_toggle'] ) : checked('0', '1'); ?> />
+						<label class="description" for="responsive_theme_options[head_cat_text_toggle]"><?php _e('Check to enable', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->   						
+
+				<?php
+                /**
+                 * Header Cat Image Select
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Header Category Images', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[header_cat_imgs]" class="regular-text" type="text" name="responsive_theme_options[header_cat_imgs]" value="<?php if (!empty($options['header_cat_imgs'])) esc_attr_e($options['header_cat_imgs']); ?>" />
+                        <label class="description" for="responsive_theme_options[header_cat_imgs]"><?php _e('Type in the URLs of images for the categories you want featured in the header. Seperate with commas, no spaces.', 'responsive'); ?></label>
+					</div>
+
+				<?php
+                /**
+                 * Header Subtitles
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Header Category Subtitles', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                        <input id="responsive_theme_options[header_cat_subtitles]" class="regular-text" type="text" name="responsive_theme_options[header_cat_subtitles]" value="<?php if (!empty($options['header_cat_subtitles'])) esc_attr_e($options['header_cat_subtitles']); ?>" />
+                        <label class="description" for="responsive_theme_options[header_cat_subtitles]"><?php _e('Type in the subheadings for the categories featured in the header. Seperate with commas, no spaces.', 'responsive'); ?></label>
+					</div>	
+					
+						
+                        <p class="submit">
+                        <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
+                        </p>
+        
+                    
+                    
+                </div><!-- end of .rwd-block -->
+            </div><!-- end of .rwd-container -->			
 
 			
 
