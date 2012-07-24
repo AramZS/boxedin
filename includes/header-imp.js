@@ -61,7 +61,7 @@ jQuery(document).ready(function () {
 	//If you want the buttons to be smaller, just multiply marginP by .8 (for 80% of the available registering space)
 	//Or whatever percentage you'd prefer. 
 	var padding = (marginP)/2;
-	alert(padding);
+	//alert(padding);
  	children.each(function(item){
  		
    		
