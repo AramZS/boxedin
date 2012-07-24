@@ -6,6 +6,15 @@ function extra_menu_setup() {
 }
 add_action('after_setup_theme', 'extra_menu_setup');
 
+//Via http://www.wpbeginner.com/wp-themes/how-to-add-facebook-open-graph-meta-data-in-wordpress-themes/
+//Adding the Open Graph in the Language Attributes
+function add_opengraph_doctype( $output ) {
+		//This takes the standard output used for notifying browsers what language your page is in
+		// and adds in the Facebook tags, since all that info goes into the HTML tag. 
+		return $output . ' xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml"';
+	}
+add_filter('language_attributes', 'add_opengraph_doctype');
+
 $sidebars = array('Home Header Far Left', 'Home Header Right', 'Home Header Far Right');
 foreach ($sidebars as $sidebar) {
 	register_sidebar(array('name'=> $sidebar,
@@ -26,6 +35,7 @@ register_sidebar(array('name'=> 'Header Widget',
 ));
 
 require ( get_template_directory() . '/includes/theme-options.php' );
+require ( get_template_directory() . '/includes/youtubemetabox.php' );
 
 function jsvar_setup() {	
             $options = get_option('responsive_theme_options');
@@ -56,6 +66,15 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'horizontal-thumb', 800, 600, true ); 
 	add_image_size( 'article-thumb', 800, 400, true );
 }
+
+function show_youtube_link( $ytlink ) {
+
+	
+	echo '<object><param name="movie" value="' . $ytlink . '"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="' . $ytlink . '" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object>';
+	
+
+}
+
 
 function custom_excerpt_length( $length ) {
 	return 20;

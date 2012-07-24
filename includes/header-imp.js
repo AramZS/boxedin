@@ -105,7 +105,7 @@ jQuery(document).ready(function () {
    		}
 	});
 	
-	jQuery(function() {
+/**	jQuery(function() {
 	
 	var childrenC = jQuery('.header-widget-inner .header-cat-item');
 	
@@ -138,7 +138,7 @@ jQuery(document).ready(function () {
    		}
 	});
 	
-	});
+	}); **/
 	
 
 });

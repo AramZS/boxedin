@@ -213,15 +213,19 @@
 								
 								
 								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
-								
+									$postID = get_the_ID();
+									$ytuserlinkOne = get_post_meta($postID, 'youtubelink', true);
 									?>
 									<div class="topthumb">
+										
 										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
 										} ?></a>
+										<?php 
+										?>
 									</div>
 									<div class="clear"></div>	
 									<div class="topmeta">
@@ -276,6 +280,10 @@
 									$featureQueryTwo = new WP_Query( array('showposts' => 1) );
 								}
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
+									$postID = get_the_ID();
+									$ytuserlinkTwo = get_post_meta($postID, 'youtubelink', true);
+									if ($ytuserlinkTwo != ''){
+									
 									?>
 									<div class="toptitle">
 										<h2 class="maintitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
@@ -288,6 +296,20 @@
 											
 										} ?></a>
 									</div>
+									<?php } else {
+									?>
+										<div class="topthumb">
+											<?php 
+											show_youtube_link($ytuserlinkTwo);
+											?>
+										</div>
+										<div class="toptitle youtubed">
+											<h2 class="maintitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
+										</div>				
+									<?php
+									}
+									?>
+									
 									<div class="clear"></div>	
 									<div class="topmeta">
 										<?php
@@ -334,15 +356,19 @@
 								
 								}
 								while ( $featureQueryThree->have_posts() ) : $featureQueryThree->the_post();
-								
+								$postID = get_the_ID();
+									$ytuserlinkThree = get_post_meta($postID, 'youtubelink', true);
 									?>
 									<div class="topthumb">
+										
 										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
 										} ?></a>
+										<?php 
+										?>
 									</div>
 									<div class="clear"></div>	
 									<div class="topmeta">
@@ -395,15 +421,19 @@
 									$featureQueryFour = new WP_Query( array('showposts' => 1, 'offset' => $offset ) );
 								}
 								while ( $featureQueryFour->have_posts() ) : $featureQueryFour->the_post();
-								
+									$postID = get_the_ID();
+									$ytuserlinkFour = get_post_meta($postID, 'youtubelink', true);
 									?>
 									<div class="topthumb">
+										
 										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
 										} ?></a>
+										<?php 
+										?>
 									</div>
 									<div class="clear"></div>	
 									<div class="topmeta">

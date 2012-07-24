@@ -133,6 +133,7 @@ background-image: -webkit-gradient(
 
 	display: inline-block;
 	max-height: 78px;
+	margin-left: 24px;
 
 
 }
@@ -293,6 +294,24 @@ dl.nav {
 	-webkit-text-overflow: ellipsis;
 	-o-text-overflow: ellipsis;
 }
+
+.topleft .youtubed {
+
+	margin-top: 0!important;
+	position: relative!important;
+	padding-left: 10px!important;
+	background-image: none!important;
+	
+	margin-right: 90px;
+	max-height: 170px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-moz-text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+}
+
 
 .topleft .maintitle {
 
