@@ -105,11 +105,13 @@ jQuery(document).ready(function () {
    		}
 	});
 	
+	jQuery(function() {
+	
 	var childrenC = jQuery('.header-widget-inner .header-cat-item');
 	
 	var itemSpaceC = 0;
 	var itemHeightC = 0;
-	childrenC.each(function(item){
+	childrenC.delay(1500).each(function(item){
 		var widthC = (jQuery(this).width());
 			widthC = parseInt(widthC);
 		var plC = (jQuery(this).css('padding-left').replace('px',''));
@@ -134,6 +136,8 @@ jQuery(document).ready(function () {
    		if(item != 0) {
 			$(this).css('margin-left', marginC + 'px' );
    		}
+	});
+	
 	});
 	
 
