@@ -186,6 +186,17 @@ dl.nav {
 
 }
 
+.featbox .fluid-width-video-wrapper {
+
+	min-height: 180px;
+
+}
+
+.topleft .fluid-width-video-wrapper {
+
+	min-height: 380px;
+
+}
 
 .featbox  .topfarleft { 
 
@@ -233,6 +244,12 @@ dl.nav {
 
 	font-size: 9px;
 	font-family: 'Droid Sans', sans-serif;
+
+}
+
+.topthumb {
+
+	width: 100%;
 
 }
 
@@ -539,6 +556,11 @@ footer.articlewrap p {
 .clear 
 {
 
+	display:block;
+	content: ".";
+	height:0;
+	visibility:hidden;
+	
 	clear:both;
 
 }

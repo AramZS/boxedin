@@ -67,11 +67,25 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'article-thumb', 800, 400, true );
 }
 
-function show_youtube_link( $ytlink ) {
+
+
+function zs_show_youtube_link( $youtubelink ) {
 
 	
-	echo '<object><param name="movie" value="' . $ytlink . '"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="' . $ytlink . '" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object>';
+//	$wp_embed = new WP_Embed();
+//	$post_embed = $wp_embed->run_shortcode('[embed]$ytlink[/embed]');
+//	echo do_shortcode('[youtube="http://www.youtube.com/watch?v=bDOYN-6gdRE"]');
 	
+//	$embeder = '[embed]http://www.youtube.com/watch?v=bDOYN-6gdRE[/embed]';
+//	$embed = apply_filters('the_content', $embeder);
+
+	$embed = '<object><param name="movie" value="http://www.youtube.com/v/';
+	$embed .= $youtubelink;
+	$embed .= '?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/';
+	$embed .= $youtubelink;
+	$embed .= '?version=3&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed></object>';
+	return $embed;
+
 
 }
 
@@ -100,7 +114,7 @@ if ($floatWPVer >= 3.4){
 				wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
 				wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 				wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.js', array('jquery'));
-				wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/waypoints.js', array('jquery'));
+				wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array('jquery'));
 				
 		}
 
@@ -118,7 +132,7 @@ if ($floatWPVer >= 3.4){
 						wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
 						wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 						wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.js', array('jquery'));
-						wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/waypoints.js', array('jquery'));
+						wp_enqueue_script('waypoints', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array('jquery'));
 						
 		}
 		add_action('wp_enqueue_scripts', 'jq_enqueue');

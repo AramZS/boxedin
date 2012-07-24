@@ -216,15 +216,19 @@
 									$postID = get_the_ID();
 									$ytuserlinkOne = get_post_meta($postID, 'youtubelink', true);
 									?>
-									<div class="topthumb">
-										
+									<div class="topthumb <?php if ($ytuserlinkOne != ''){ echo 'fluid-width-video-wrapper'; } ?>">
+										<?php
+										if ($ytuserlinkOne == ''){										
+										?>
 										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
-										} ?></a>
-										<?php 
+										} ?></a><?php
+										} else {
+											echo zs_show_youtube_link($ytuserlinkOne);
+										}
 										?>
 									</div>
 									<div class="clear"></div>	
@@ -280,9 +284,10 @@
 									$featureQueryTwo = new WP_Query( array('showposts' => 1) );
 								}
 								while ( $featureQueryTwo->have_posts() ) : $featureQueryTwo->the_post();
-									$postID = get_the_ID();
-									$ytuserlinkTwo = get_post_meta($postID, 'youtubelink', true);
-									if ($ytuserlinkTwo != ''){
+											$postID = get_the_ID();
+											$ytuserlinkTwo = get_post_meta($postID, 'youtubelink', true);
+									//print_r($ytuserlinkTwo);
+									if ($ytuserlinkTwo == ''){
 									
 									?>
 									<div class="toptitle">
@@ -298,11 +303,16 @@
 									</div>
 									<?php } else {
 									?>
-										<div class="topthumb">
+										<div class="topthumb fluid-width-video-wrapper">
 											<?php 
-											show_youtube_link($ytuserlinkTwo);
+
+											#print_r($ytuserlinkTwo);
+											echo zs_show_youtube_link($ytuserlinkTwo);
+											#echo $ytuserlinkTwo;
 											?>
+											
 										</div>
+										<div class="clear"></div>	
 										<div class="toptitle youtubed">
 											<h2 class="maintitle"><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
 										</div>				
@@ -359,15 +369,19 @@
 								$postID = get_the_ID();
 									$ytuserlinkThree = get_post_meta($postID, 'youtubelink', true);
 									?>
-									<div class="topthumb">
-										
+									<div class="topthumb <?php if ($ytuserlinkThree != ''){ echo 'fluid-width-video-wrapper'; } ?>">
+										<?php
+										if ($ytuserlinkThree == ''){										
+										?>
 										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
-										} ?></a>
-										<?php 
+										} ?></a><?php
+										} else {
+											echo zs_show_youtube_link($ytuserlinkThree);
+										}
 										?>
 									</div>
 									<div class="clear"></div>	
@@ -424,15 +438,19 @@
 									$postID = get_the_ID();
 									$ytuserlinkFour = get_post_meta($postID, 'youtubelink', true);
 									?>
-									<div class="topthumb">
-										
+									<div class="topthumb <?php if ($ytuserlinkFour != ''){ echo 'fluid-width-video-wrapper'; } ?>">
+										<?php
+										if ($ytuserlinkFour == ''){										
+										?>
 										<a href="<?php the_permalink(); ?>"><?php 
 										if (has_post_thumbnail()){
 											
 											the_post_thumbnail('square-thumb');
 											
-										} ?></a>
-										<?php 
+										} ?></a><?php
+										} else {
+											echo zs_show_youtube_link($ytuserlinkFour);
+										}
 										?>
 									</div>
 									<div class="clear"></div>	

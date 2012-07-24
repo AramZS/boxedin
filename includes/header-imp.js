@@ -11,7 +11,7 @@ jQuery(document).ready(function () {
 	});	
 	jQuery('.featboxs').each(function (i) {
 	
-		jQuery(this).height(slideHeight); 
+		jQuery(this).height(slideHeight+10); 
 	
 	});
 	var btncounter = 0;
@@ -140,5 +140,7 @@ jQuery(document).ready(function () {
 	
 	}); **/
 	
-
+	jQuery('#container').fitVids();
+	
+	
 });

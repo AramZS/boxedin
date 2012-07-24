@@ -8,7 +8,7 @@ $yt_link_new_meta_box =
 		
 			"name" => "youtubelink",
 			"std" => "",
-			"description" => "Add the full link to the YouTube video."
+			"description" => "Add YouTube video ID (the part between 'v=' and '&'."
 			)
 	);
 
