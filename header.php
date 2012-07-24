@@ -4,6 +4,7 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<?php $options = get_option('responsive_theme_options'); ?>
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>">
@@ -29,13 +30,13 @@
 	<![endif]-->
 	
 	<!-- Favicon and Feed -->
-	<link rel="shortcut icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
+	<link rel="shortcut icon" type="image/png" href="<?php echo $options['favicon']; ?>">
 	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/feed/">
 	
 	<!--  iPhone Web App Home Screen Icon -->
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/devices/reverie-icon-ipad.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/devices/reverie-icon-retina.png" />
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/devices/reverie-icon.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo $options['favicon_med']; ?>" />
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo $options['favicon_large']; ?>" />
+	<link rel="apple-touch-icon" href="<?php echo $options['site_logo']; ?>" />
 	
 	<!-- Enable Startup Image for iOS Home Screen Web App -->
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -58,7 +59,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<?php $options = get_option('responsive_theme_options'); ?>
+	
 	<!-- Start the main container -->
 	<div id="container" class="container" role="document">
 		
@@ -68,8 +69,8 @@
 				<div class="reverie-header">
 					
 					<div id="logobox">
-						<a href="<?php bloginfo('url'); ?>">
-							<img class="mainlogo" src="<?php echo $options['site_logo']; ?>" <?php if (isset($options['site_logo_w'])){ echo 'width="' . $options['site_logo_w'] . 'px"'; }  if (isset($options['site_logo_w'])){ echo 'height="' . $options['site_logo_h'] . 'px"'; } ?> alt="Mason Votes" title="Mason Votes">
+						<a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name') ?>">
+							<img class="mainlogo" src="<?php echo $options['site_logo']; ?>" <?php if (isset($options['site_logo_w'])){ echo 'width="' . $options['site_logo_w'] . 'px"'; }  if (isset($options['site_logo_w'])){ echo 'height="' . $options['site_logo_h'] . 'px"'; } echo 'alt="' . get_bloginfo('name') . '"'; ?>>
 						</a>
 					</div>
 					
@@ -99,9 +100,9 @@
 					<?php if($options['site_descrip'] == 0){ ?>
 						<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 					<?php } ?>
-				
+					<div class="topborder"></div>
 				</div>
-				<nav role="navigation">
+				<nav role="navigation" class="mainnav">
 					<?php /*
 						You can use Foundation Tabs to get a better responsive design.
 					    Our navigation menu. If one isn't filled out, wp_nav_menu falls

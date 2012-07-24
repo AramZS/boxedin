@@ -33,6 +33,10 @@ jQuery(document).ready(function () {
 	
 		var addedlogowidth = logowidth + 10;
 		jQuery('.top-head-menu').css("margin-left",addedlogowidth);
+		jQuery('.subheader').css("margin-left",addedlogowidth);
+		jQuery('.mainnav').css("margin-left",addedlogowidth);
+		var underlapwidth = logowidth - 20;
+		jQuery('.topborder').css("margin-left",underlapwidth);
 		
 		
     var children = jQuery('.topmostmenu .menu-item');

@@ -1,3 +1,16 @@
+div.reverie-header {
+
+	margin-bottom: 16px;
+	border: 0;
+
+}
+
+.topborder {
+
+	border-bottom: solid 1px #ccc;
+
+}
+
 #logobox {
 
 	float:left;

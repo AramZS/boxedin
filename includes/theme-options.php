@@ -118,7 +118,40 @@ function responsive_theme_options_do_page() {
             <h3 class="rwd-toggle"><a href="#"><?php _e('Theme Elements', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block"> 
-                               
+
+               <?php
+                /**
+                 * Fav Icon
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('Favicon URL', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                      <input id="responsive_theme_options[favicon]" class="regular-text" type="text" name="responsive_theme_options[favicon]" value="<?php if (!empty($options['favicon'])) esc_attr_e($options['favicon']); ?>" />
+                        <label class="description" for="responsive_theme_options[favicon]"><?php _e('Enter your favicon URI', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->
+					
+               <?php
+                /**
+                 * Medium Fav Icon for Touch
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('72x72 Favicon URL', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                      <input id="responsive_theme_options[favicon_med]" class="regular-text" type="text" name="responsive_theme_options[favicon_med]" value="<?php if (!empty($options['favicon_med'])) esc_attr_e($options['favicon_med']); ?>" />
+                        <label class="description" for="responsive_theme_options[favicon_med]"><?php _e('Enter your Medium Favicon URI', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->					
+              
+			  <?php
+                /**
+                 * Large Fav Icon for Touch
+                 */
+                ?>
+                <div class="grid col-300"><?php _e('114x114 Favicon URL', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                    <div class="grid col-620 fit">
+                      <input id="responsive_theme_options[favicon_large]" class="regular-text" type="text" name="responsive_theme_options[favicon_large]" value="<?php if (!empty($options['favicon_large'])) esc_attr_e($options['favicon_large']); ?>" />
+                        <label class="description" for="responsive_theme_options[favicon_large]"><?php _e('Enter your Large Favicon URI', 'responsive'); ?></label>
+                    </div><!-- end of .grid col-620 -->
+				
                 <?php
                 /**
                  * Breadcrumb Lists
@@ -749,6 +782,9 @@ function responsive_theme_options_validate($input) {
     $input['cta_text'] = wp_kses_stripslashes($input['cta_text']);
     $input['cta_url'] = esc_url_raw($input['cta_url']);
     $input['site_logo'] = esc_url_raw($input['site_logo']);
+	$input['favicon'] = esc_url_raw($input['favicon']);
+	$input['favicon_med'] = esc_url_raw($input['favicon_med']);
+	$input['favicon_large'] = esc_url_raw($input['favicon_large']);
 	$input['site_logo_h'] = wp_kses_stripslashes($input['site_logo_h']);
 	$input['site_logo_w'] = wp_kses_stripslashes($input['site_logo_w']);
     $input['featured_content'] = wp_kses_stripslashes($input['featured_content']);
