@@ -147,10 +147,10 @@ function responsive_theme_options_do_page() {
                  * CTA Button
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Disable Call to Action Button?', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Disable Site Description?', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
-					    <input id="responsive_theme_options[cta_button]" name="responsive_theme_options[cta_button]" type="checkbox" value="1" <?php isset($options['cta_button']) ? checked( '1', $options['cta_button'] ) : checked('0', '1'); ?> />
-						<label class="description" for="responsive_theme_options[cta_button]"><?php _e('Check to disable', 'responsive'); ?></label>
+					    <input id="responsive_theme_options[site_descrip]" name="responsive_theme_options[site_descrip]" type="checkbox" value="1" <?php isset($options['site_descrip']) ? checked( '1', $options['site_descrip'] ) : checked('0', '1'); ?> />
+						<label class="description" for="responsive_theme_options[site_descrip]"><?php _e('Check to disable', 'responsive'); ?></label>
                          <p class="submit">
                         <input type="submit" class="button-primary" value="<?php _e('Save Options', 'responsive'); ?>" />
                         </p>

@@ -95,7 +95,11 @@
 							'walker' => new description_walker())
 						); ?>
 					</nav>
-					<h4 class="subheader"><?php bloginfo('description'); ?></h4>
+					
+					<?php if($options['site_descrip'] == 0){ ?>
+						<h4 class="subheader"><?php bloginfo('description'); ?></h4>
+					<?php } ?>
+				
 				</div>
 				<nav role="navigation">
 					<?php /*
