@@ -553,6 +553,83 @@ footer.articlewrap p {
 
 }
 
+#frontsocial {
+
+	border-width: 2px;
+	border-style: inset;
+	background-color:#C7EBD6;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color: #666;
+	padding-top:10px;
+	padding-bottom: 12px;
+
+}
+
+.underBox { 
+	/* border-bottom:ridge; 
+	border-bottom-color:#000000; */
+	padding-left: 15px;
+	padding-bottom: 0px;
+	padding-top:3px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #666666;
+}
+
+.underBox2 { 
+	padding-top:11px;
+
+}
+
+.underBox2 a {
+
+	margin-left: 15px;
+	padding: 0 0 0 19px;
+	display: block;
+
+}
+
+.underBox2 .feed {
+
+	background: url("../imgs/feedicon/feed-icon-14x14.png") no-repeat 0 50%;
+}
+
+.underBox2 .tweet {
+
+	background: url("../imgs/feedicon/twitter.png") no-repeat 0 50%;
+}
+
+.underBox2 .flickr {
+
+	background: url("../imgs/feedicon/flickr.png") no-repeat 0 50%;
+}
+
+.underBox2 .youtube {
+
+	background: url("../imgs/feedicon/youtube.png") no-repeat 0 50%;
+}
+
+.underBox2 .ff {
+
+	background: url("../imgs/feedicon/friendfeed.png") no-repeat 0 50%;
+}
+
+.underBox2 .facebook {
+
+	background: url("../imgs/feedicon/facebook.png") no-repeat 0 50%;
+}
+
+.underBox2 .deli {
+
+	background: url("../imgs/feedicon/delicious.png") no-repeat 0 50%;
+}
+
+.underBox2 .dotTV {
+
+	background: url("../imgs/feedicon/dotTV.png") no-repeat 0 50%;
+}
+
 .clear 
 {
 

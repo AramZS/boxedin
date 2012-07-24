@@ -196,10 +196,7 @@
 			
 				<div class="two columns topfarleft featboxs">
 				
-					<div class="row topwidgetbox">
-						
-						<div class="twelve columns topwidget article">
-							<?php
+						<?php
 							
 								if (is_cat_option_set($featCatOne)) {
 								
@@ -211,7 +208,14 @@
 								
 								}
 								
-								
+							if($featureQueryOne->have_posts()) :
+							
+						?>
+				
+					<div class="row topwidgetbox">
+						
+						<div class="twelve columns topwidget article">
+							<?php
 								while ( $featureQueryOne->have_posts() ) : $featureQueryOne->the_post();
 									$postID = get_the_ID();
 									$ytuserlinkOne = get_post_meta($postID, 'youtubelink', true);
@@ -260,6 +264,7 @@
 						</div>
 						
 					</div>
+					<?php endif; ?>
 					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
@@ -351,11 +356,7 @@
 					<div class="clear"></div>	
 				</div>
 				<div class="two columns topright featboxs">
-				
-					<div class="row topwidgetbox">
-						
-						<div class="twelve columns topwidget article">
-							<?php
+					<?php
 								if (is_cat_option_set($featCatThree)) {
 								
 									$featureQueryThree = new WP_Query( array('cat' => $featCatThree, 'showposts' => 1, 'post__not_in' => $excludeset ) );
@@ -365,6 +366,15 @@
 									$featureQueryThree = new WP_Query( array('showposts' => 1, 'offset' => $offset) );
 								
 								}
+								
+								if($featureQueryThree->have_posts()) :
+						?>
+					<div class="row topwidgetbox">
+						
+						<div class="twelve columns topwidget article">
+							<?php
+
+								
 								while ( $featureQueryThree->have_posts() ) : $featureQueryThree->the_post();
 								$postID = get_the_ID();
 									$ytuserlinkThree = get_post_meta($postID, 'youtubelink', true);
@@ -411,6 +421,7 @@
 						</div>
 						
 					</div>
+					<?php endif; ?>
 					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
@@ -421,11 +432,8 @@
 				
 				</div>
 				<div class="two columns topfarright featboxs">
+				<?php
 				
-					<div class="row topwidgetbox">
-						
-						<div class="twelve columns topwidget article">
-							<?php
 								if (is_cat_option_set($featCatFour)) {
 								
 									$featureQueryFour = new WP_Query( array('cat' => $featCatFour, 'showposts' => 1, 'post__not_in' => $excludeset ) );
@@ -434,6 +442,15 @@
 									$offset++;							
 									$featureQueryFour = new WP_Query( array('showposts' => 1, 'offset' => $offset ) );
 								}
+						if($featureQueryFour->have_posts()) :
+				?>
+					<div class="row topwidgetbox">
+						
+						<div class="twelve columns topwidget article">
+							<?php
+
+								
+								
 								while ( $featureQueryFour->have_posts() ) : $featureQueryFour->the_post();
 									$postID = get_the_ID();
 									$ytuserlinkFour = get_post_meta($postID, 'youtubelink', true);
@@ -475,11 +492,13 @@
 								$excludeset[] = get_the_ID();
 								endwhile;
 								wp_reset_postdata();
-								wp_reset_query();							
+								wp_reset_query();
+									
 							?>
 						</div>
 						
 					</div>
+					<?php endif; ?>
 					<div class="row topwidgetbox">
 					
 						<div class="twelve columns topwidget">
