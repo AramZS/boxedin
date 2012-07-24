@@ -1,6 +1,6 @@
 div.reverie-header {
 
-	margin-bottom: 16px;
+	margin-bottom: 8px;
 	border: 0;
 
 }
@@ -113,6 +113,78 @@ background-image: -webkit-gradient(
 
 
 }
+
+.header-widget {
+
+	margin-top: 6px;
+	display: block;
+	
+	
+
+}
+
+.header-widget-inner {
+
+	
+
+}
+
+.header-cat-item {
+
+	display: inline-block;
+	max-height: 78px;
+
+
+}
+
+.header-category-display {
+
+	position:relative;
+
+}
+
+.header-category-display h5 {
+
+	position:absolute;
+	left:78px;
+	top:8px;
+	color:#555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+
+}
+
+.header-category-display h5 a{
+
+	text-decoration: none;
+
+}
+
+.header-category-display h6 {
+
+	position:absolute;
+	left:78px;
+	top:40px;
+	color:#555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+
+}
+
+.header-category-display h6 a{
+
+	text-decoration: none;
+
+}
+
+dl.nav {
+
+	margin-bottom: 2px;
+	background-color: #F6F6F6;
+	padding-top:9px;
+
+}
+
 
 .featbox  .topfarleft { 
 

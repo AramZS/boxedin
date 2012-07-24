@@ -101,54 +101,56 @@
 						<h4 class="subheader"><?php bloginfo('description'); ?></h4>
 					<?php } ?>
 					<div class="topborder"></div>
-				</div>
-				<div class="header-widget">
-				
-					<?php 
-					if ($options['top_widget_on'] == 1) {
-					dynamic_sidebar("Header Widget"); 
-					} else {
-					
-						$header_cats = $options['header_cats'];
-						$headerCatArray = explode(",",$options['header_cats']);
-						$headerCatCount = count($headerCatArray);
-						$imgUrlsArray = explode(",",$options['header_cat_imgs']);
-						$imgUrlsCount = count($imgUrlsCount); 
-						$catSubArray = explode(",",$options['header_cat_subtitles']);
-						$catSubCount = count($catSubArray); 
-						$k=0;
-
-						  if ( $header_cats !== "" ){
-						  
-
-							
-							foreach ($headerCatArray as $key => $value) {
-						  
-
-						  
-							?>
-							<div class="header-cat-item">
-								<a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>">
-									<div class="header-category-display" >
-											<img src="<?php echo $imgUrlsArray[$key]; ?>" alt="<?php echo get_cat_name($value); ?>" />
-											<h5><a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>"><?php echo get_cat_name($value); ?></a></h5>
-											<h6><a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>"><?php echo $catSubArray[$key]; ?></a></h6>
-									</div>
-								</a>
-							</div>
-							<?php
-							
-								$k++;
-							
-							}
-						  
-						  }
-
+					<div class="header-widget">
+						<div class="header-widget-inner">
 						
-					}
-					?>
-				
+							<?php 
+							if ($options['top_widget_on'] == 1) {
+							dynamic_sidebar("Header Widget"); 
+							} else {
+							
+								$header_cats = $options['header_cats'];
+								$headerCatArray = explode(",",$options['header_cats']);
+								$headerCatCount = count($headerCatArray);
+								$imgUrlsArray = explode(",",$options['header_cat_imgs']);
+								$imgUrlsCount = count($imgUrlsCount); 
+								$catSubArray = explode(",",$options['header_cat_subtitles']);
+								$catSubCount = count($catSubArray); 
+								$k=0;
+
+								  if ( $header_cats !== "" ){
+								  
+
+									
+									foreach ($headerCatArray as $key => $value) {
+								  
+
+								  
+									?>
+									<div class="header-cat-item">
+										<a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>">
+											<div class="header-category-display" >
+													<img src="<?php echo $imgUrlsArray[$key]; ?>" alt="<?php echo get_cat_name($value); ?>" />
+													<h5><a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>"><?php echo get_cat_name($value); ?></a></h5>
+													<h6><a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>"><?php echo $catSubArray[$key]; ?></a></h6>
+											</div>
+										</a>
+									</div>
+									<?php
+									
+										$k++;
+									
+									}
+								  
+								  }
+
+								
+							}
+							?>
+						</div>
+					</div>					
 				</div>
+				
 				<nav role="navigation" class="mainnav">
 					<?php /*
 						You can use Foundation Tabs to get a better responsive design.

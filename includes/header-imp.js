@@ -35,6 +35,7 @@ jQuery(document).ready(function () {
 		jQuery('.top-head-menu').css("margin-left",addedlogowidth);
 		jQuery('.subheader').css("margin-left",addedlogowidth);
 		jQuery('.mainnav').css("margin-left",addedlogowidth);
+		jQuery('.header-widget').css("margin-left",addedlogowidth);
 		var underlapwidth = logowidth - 20;
 		jQuery('.topborder').css("margin-left",underlapwidth);
 		
@@ -101,6 +102,37 @@ jQuery(document).ready(function () {
  		margin = margin;
    		if(item != 0) {
 			$(this).css('margin-left', margin + 'px' );
+   		}
+	});
+	
+	var childrenC = jQuery('.header-widget-inner .header-cat-item');
+	
+	var itemSpaceC = 0;
+	var itemHeightC = 0;
+	childrenC.each(function(item){
+		var widthC = (jQuery(this).width());
+			widthC = parseInt(widthC);
+		var plC = (jQuery(this).css('padding-left').replace('px',''));
+			plC = parseInt(plC);
+		var prC = (jQuery(this).css('paddingRight').replace('px',''));
+			prC = parseInt(prC);
+		var brC = (jQuery(this).css('border-right').replace('px',''));
+			brC = parseInt(brC);
+		var blC = (jQuery(this).css('border-left').replace('px',''));
+			blC = parseInt(blC);			
+		//alert( width+pl+pr+br+bl );
+		itemSpaceC += (widthC+plC+prC+brC+blC);
+		itemHeightC = jQuery(this).height();
+		//alert(bl);
+	});
+	
+ 	var marginC = Math.floor((jQuery('.header-widget-inner').width() - itemSpaceC) / (childrenC.size() - 1)) - 4;
+	marginC = marginC;
+	//alert(children.size());
+ 	childrenC.each(function(item){
+ 		marginC = marginC;
+   		if(item != 0) {
+			$(this).css('margin-left', marginC + 'px' );
    		}
 	});
 	

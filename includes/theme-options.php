@@ -555,15 +555,15 @@ function responsive_theme_options_do_page() {
             </div><!-- end of .rwd-container -->
 			
 			
-           <h3 class="rwd-toggle"><a href="#"><?php _e('Top Preview Area', 'responsive'); ?></a></h3>
+           <h3 class="rwd-toggle"><a href="#"><?php _e('Top Category Preview Area', 'responsive'); ?></a></h3>
             <div class="rwd-container">
                 <div class="rwd-block">
                 <?php
                 /**
-                 * Use widgetized area
+                 * Use candidates area
                  */
                 ?>
-                <div class="grid col-300"><?php _e('Use Widgetized Area', 'responsive'); ?></div><!-- end of .grid col-300 -->
+                <div class="grid col-300"><?php _e('Use Category Display in Candidates Area', 'responsive'); ?></div><!-- end of .grid col-300 -->
                     <div class="grid col-620 fit">
 					    <input id="responsive_theme_options[top_widget_on]" name="responsive_theme_options[top_widget_on]" type="checkbox" value="1" <?php isset($options['top_widget_on']) ? checked( '1', $options['top_widget_on'] ) : checked('0', '1'); ?> />
 						<label class="description" for="responsive_theme_options[top_widget_on]"><?php _e('Check to disable', 'responsive'); ?></label>
