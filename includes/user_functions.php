@@ -110,11 +110,12 @@ if ($floatWPVer >= 3.4){
 		function jq_setup() {
 				
 				wp_enqueue_script('jquery');
-				wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('fitvid'));
+			#	wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('waypoint'));
 				wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
 				wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 				wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.js', array('jquery'));
 				wp_enqueue_script('fitvid', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array('jquery'));
+				wp_enqueue_script('waypoint', get_stylesheet_directory_uri() . '/js/waypoints.js', array('jquery'));
 				
 		}
 
@@ -128,11 +129,12 @@ if ($floatWPVer >= 3.4){
 						wp_deregister_script( 'jquery' );
 						wp_register_script('jquery', 'http://code.jquery.com/jquery-latest.min.js', '', '1.7.2');
 						wp_enqueue_script('jquery');
-						wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('fitvid'));
+					#	wp_enqueue_script('header-imp', get_stylesheet_directory_uri() . '/includes/header-imp.js', array('waypoint'));
 						wp_enqueue_script('infiniscroll', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.js', array('jquery'));
 						wp_enqueue_script('scrollimp', get_stylesheet_directory_uri() . '/includes/scroll-imp.js', array('infiniscroll'));
 						wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/bootstrap/bootstrap.js', array('jquery'));
 						wp_enqueue_script('fitvid', get_stylesheet_directory_uri() . '/js/jquery.fitvids.js', array('jquery'));
+						wp_enqueue_script('waypoint', get_stylesheet_directory_uri() . '/js/waypoints.js', array('jquery'));
 						
 		}
 		add_action('wp_enqueue_scripts', 'jq_enqueue');
@@ -140,7 +142,7 @@ if ($floatWPVer >= 3.4){
 
 function ajaxery() {
 
-
+	echo '<script type="text/javascript" src="' . get_stylesheet_directory_uri() . '/includes/header-imp.js"></script>';
 	
 }
 add_action('wp_footer', 'ajaxery');

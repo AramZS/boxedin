@@ -3,8 +3,6 @@ $options = get_option('responsive_theme_options');
 	global $excludeset;
 	global $page;
 	global $wp_query;
-			global $excludeset;
-	global $zshomeposts;
 			
 //print '$GLOBALS = ' . var_dump($GLOBALS, true) . "\n";	
 $postperpage = get_option('posts_per_page');
@@ -12,10 +10,10 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 if (is_home()) {
 	if (($options['featuredh'] == 0)) {
-		//query_posts(array('post__not_in' => $excludeset, 'paged' => $paged, 'showposts' => $postperpage  ));
+		query_posts(array('post__not_in' => $excludeset, 'paged' => $paged, 'showposts' => $postperpage  ));
 		
-		$args = array_merge($wp_query->query, array('post__not_in' => $excludeset  ));
-		query_posts($args);
+//		$args = array_merge($wp_query->query, array('post__not_in' => $excludeset  ));
+//		query_posts($args);
 	
 	}
 ?>
