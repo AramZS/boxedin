@@ -201,9 +201,8 @@ dl.nav {
 .featbox  .topfarleft { 
 
 	background-color: #F6F6F6;
-	border-right: 1px #D1D1D1 solid;
-	border-left: 1px #D1D1D1 solid;
-	margin-right: .8%;
+	outline: 1px #D1D1D1 solid;
+	margin-right: 1.6%;
 	width: 15.8%;
 
 }
@@ -211,21 +210,19 @@ dl.nav {
 .featbox  .topleft { 
 
 	background-color: #F6F6F6;
-	border-right: 1px #D1D1D1 solid;
-	border-left: 1px #D1D1D1 solid;	
-	margin-left: .8%;
-	margin-right: .8%;
-	width: 47.8%;
+	outline: 1px #D1D1D1 solid;
+	margin-left: 0;
+	margin-right: 1.6%;
+	width: 48.3%;
 
 }
 
 .featbox  .topright { 
 
 	background-color: #F6F6F6;
-	border-right: 1px #D1D1D1 solid;
-	border-left: 1px #D1D1D1 solid;	
-	margin-left: .8%;
-	margin-right: .8%;
+	outline: 1px #D1D1D1 solid;
+	margin-left: 0;
+	margin-right: 0;
 	width: 15.8%;
 
 }
@@ -233,9 +230,8 @@ dl.nav {
 .featbox  .topfarright { 
 
 	background-color: #F6F6F6;
-	border-right: 1px #D1D1D1 solid;
-	border-left: 1px #D1D1D1 solid;	
-	margin-left: .8%;
+	outline: 1px #D1D1D1 solid;
+	margin-left: 0;
 	width: 15.8%;
 
 }
